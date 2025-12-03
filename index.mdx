@@ -1,97 +1,81 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Welcome to NTS Vortex"
+description: "Your comprehensive guide to managing NTS Vortex - Nationwide Transport Services' AI-powered assistant platform"
 ---
 
-## Setting up
+## Welcome, Administrator
 
-Get your documentation site up and running in minutes.
+NTS Vortex is Nationwide Transport Services' powerful AI assistant platform. This documentation will help you manage and configure the system to best serve your team's needs.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+<Note>
+This documentation is designed for NTS administrators. No programming experience is required to follow these guides.
+</Note>
 
-## Make it yours
+## Quick Navigation
 
-Design a docs site that looks great and empowers your users.
+Get started with the most common tasks:
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+<CardGroup cols={2}>
+  <Card title="What is NTS Vortex?" icon="circle-info" href="/getting-started/overview">
+    Learn about NTS Vortex capabilities and how it can help your team.
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="First Time Setup" icon="play" href="/getting-started/first-login">
+    Complete your initial administrator setup and configuration.
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+  <Card title="Create AI Agents" icon="robot" href="/agents/creating-agents">
+    Build custom AI assistants tailored to your team's needs.
   </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
+  <Card title="Add Knowledge" icon="book" href="/knowledge-base/adding-documents">
+    Upload documents to make your AI smarter about NTS operations.
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## Documentation Sections
 
-Everything you need to create world-class documentation.
+<AccordionGroup>
+  <Accordion title="Server Management" icon="server">
+    Learn how to access your Hostinger VPS, update NTS Vortex to the latest version, and configure system settings.
+    
+    - [Accessing Hostinger VPS](/server-management/hostinger-vps)
+    - [Updating NTS Vortex](/server-management/updating-docker)
+    - [Environment Variables](/server-management/environment-variables)
+  </Accordion>
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+  <Accordion title="AI Agents" icon="robot">
+    Create and manage AI assistants that can help with specific tasks and have access to custom knowledge.
+    
+    - [Understanding Agents](/agents/overview)
+    - [Creating New Agents](/agents/creating-agents)
+    - [Editing Existing Agents](/agents/editing-agents)
+  </Accordion>
 
-## Need inspiration?
+  <Accordion title="Knowledge Base" icon="database">
+    Build a knowledge base by uploading documents that your AI agents can reference when answering questions.
+    
+    - [Knowledge Base Overview](/knowledge-base/overview)
+    - [Adding Documents](/knowledge-base/adding-documents)
+    - [Using Mistral OCR](/knowledge-base/mistral-ocr)
+  </Accordion>
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
+  <Accordion title="AI Models" icon="microchip">
+    Configure which AI models are available and set up integrations with model providers.
+    
+    - [OpenRouter Setup](/models/openrouter-setup)
+    - [Selecting Models](/models/selecting-models)
+    - [Image Generation](/models/image-generation)
+  </Accordion>
+
+  <Accordion title="Chat Features" icon="comments">
+    Learn how to use channels, tag AI models in conversations, and view user chat history.
+    
+    - [Using Channels](/chat-features/channels)
+    - [Tagging AI Models](/chat-features/tagging-models)
+    - [Viewing Chat History](/chat-features/chat-history)
+  </Accordion>
+</AccordionGroup>
+
+## Need Help?
+
+<Card title="Contact NTS Support" icon="headset" href="mailto:info@ntslogistics.com">
+  If you encounter any issues or have questions not covered in this documentation, reach out to your NTS support team.
 </Card>

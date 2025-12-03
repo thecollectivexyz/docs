@@ -1,0 +1,193 @@
+---
+title: "Understanding Agents"
+description: "Learn what AI agents are and how they can help your team at NTS"
+---
+
+## What Are Agents?
+
+Agents in NTS Vortex are specialized AI assistants that you can customize for specific tasks or departments. Think of them as pre-configured AI helpers that come with built-in knowledge, personality, and capabilities tailored to particular use cases.
+
+<Frame caption="Agents list in NTS Vortex">
+  <img src="/images/placeholders/agents/agents-list.png" alt="List of available agents in NTS Vortex" />
+</Frame>
+
+## Why Use Agents?
+
+Instead of starting every conversation from scratch, agents let you:
+
+<CardGroup cols={2}>
+  <Card title="Save Time" icon="clock">
+    Pre-configure system prompts so the AI immediately understands context.
+  </Card>
+  <Card title="Ensure Consistency" icon="check-double">
+    Every team member gets the same quality assistance.
+  </Card>
+  <Card title="Add Knowledge" icon="book">
+    Give agents access to specific documents and information.
+  </Card>
+  <Card title="Customize Behavior" icon="sliders">
+    Set the tone, style, and focus for different use cases.
+  </Card>
+</CardGroup>
+
+## Agent Components
+
+Every agent has several configurable components:
+
+<Frame caption="Agent configuration screen">
+  <img src="/images/placeholders/agents/agent-components.png" alt="Agent configuration showing different components" />
+</Frame>
+
+### 1. Name and Description
+
+The agent's name and a brief description of what it does. This helps users know when to use each agent.
+
+**Examples:**
+- "NTS Policy Assistant" - Answers questions about company policies
+- "Dispatch Helper" - Assists with logistics and routing questions
+- "HR Support Bot" - Helps with human resources inquiries
+
+### 2. System Prompt
+
+The system prompt is the most important part of an agent. It's a set of instructions that tells the AI:
+- What role to play
+- What information to focus on
+- How to respond
+- What to avoid
+
+<Tip>
+A well-written system prompt is the key to a useful agent. Spend time crafting clear, specific instructions.
+</Tip>
+
+### 3. Model Selection
+
+Choose which AI model the agent should use. Different models have different strengths:
+
+| Model Type | Best For |
+|------------|----------|
+| GPT-4 | Complex reasoning, nuanced responses |
+| Claude | Long documents, careful analysis |
+| GPT-3.5 | Quick responses, simple tasks |
+| Mistral | Fast, efficient responses |
+
+### 4. Knowledge Base
+
+Connect documents and files to your agent so it can reference specific information when answering questions. This is how you give an agent "memory" of your company's documents.
+
+### 5. Tools (Advanced)
+
+Some agents can be given tools to perform specific actions, like searching the web or performing calculations. This is an advanced feature.
+
+## Example Agent Configurations
+
+Here are some examples of how you might configure agents for NTS:
+
+<AccordionGroup>
+  <Accordion title="Customer Service Agent">
+    **Name:** NTS Customer Service Assistant
+    
+    **System Prompt:**
+    ```
+    You are a helpful customer service representative for Nationwide Transport Services. 
+    You help customers with:
+    - Shipping quotes and estimates
+    - Tracking their shipments
+    - Understanding our services
+    - Answering general questions about NTS
+    
+    Always be professional, friendly, and helpful. If you don't know something, 
+    say so and offer to connect them with a human representative.
+    ```
+    
+    **Model:** GPT-4 (for nuanced customer interactions)
+    
+    **Knowledge Base:** Customer FAQ document, Services catalog
+  </Accordion>
+
+  <Accordion title="Internal Policy Agent">
+    **Name:** NTS Policy Expert
+    
+    **System Prompt:**
+    ```
+    You are an expert on Nationwide Transport Services' internal policies and procedures.
+    Help employees find information about:
+    - Company policies
+    - HR procedures
+    - Safety guidelines
+    - Operational procedures
+    
+    Always cite the specific policy or document when providing information.
+    If you're unsure, recommend the employee contact HR directly.
+    ```
+    
+    **Model:** Claude (good with long policy documents)
+    
+    **Knowledge Base:** Employee handbook, Policy documents, Safety manuals
+  </Accordion>
+
+  <Accordion title="Dispatch Assistant">
+    **Name:** Dispatch Helper
+    
+    **System Prompt:**
+    ```
+    You are an assistant for the NTS dispatch team. Help dispatchers with:
+    - Route planning suggestions
+    - Load optimization tips
+    - DOT regulations and compliance
+    - Equipment specifications
+    
+    Be concise and practical. Dispatchers need quick, actionable information.
+    ```
+    
+    **Model:** GPT-3.5 (fast responses for busy dispatchers)
+    
+    **Knowledge Base:** DOT regulations, Equipment specs, Route guidelines
+  </Accordion>
+</AccordionGroup>
+
+## Who Can Use Agents?
+
+Once you create an agent:
+
+- **All users** can chat with it if it's set to public
+- **Only you** can chat with it if it's set to private
+- **Specific groups** can access it if you set up group permissions
+
+## Managing Agents
+
+As an administrator, you can:
+
+- **Create** new agents for different purposes
+- **Edit** existing agents to improve them
+- **Delete** agents that are no longer needed
+- **Duplicate** agents to create variations
+
+## Best Practices
+
+<Tip>
+**Start Simple:** Begin with a basic agent and improve it over time based on user feedback.
+</Tip>
+
+<Tip>
+**Be Specific:** The more specific your system prompt, the better the agent performs.
+</Tip>
+
+<Tip>
+**Test Thoroughly:** Try various questions to make sure the agent responds appropriately before sharing with your team.
+</Tip>
+
+<Warning>
+**Review Regularly:** Check agent performance and update system prompts as your needs change.
+</Warning>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Create Your First Agent" icon="plus" href="/agents/creating-agents">
+    Follow our step-by-step guide to create a new agent.
+  </Card>
+  <Card title="Edit Existing Agents" icon="pen" href="/agents/editing-agents">
+    Learn how to modify and improve your agents.
+  </Card>
+</CardGroup>
+

@@ -1,0 +1,286 @@
+---
+title: "Environment Variables"
+description: "Configure NTS Vortex behavior by modifying environment variables"
+---
+
+## What Are Environment Variables?
+
+Environment variables are settings that control how NTS Vortex behaves. Think of them as configuration switches that you can adjust to customize the system without changing any code.
+
+<Info>
+Most environment variables are set during initial installation and rarely need to be changed. Only modify them if you have a specific reason to do so.
+</Info>
+
+## Where Environment Variables Are Stored
+
+Environment variables for NTS Vortex are typically stored in one of two places:
+
+1. **Docker Compose file** (`docker-compose.yml`) - The main configuration file
+2. **Environment file** (`.env`) - A separate file for sensitive values like API keys
+
+## Viewing Current Environment Variables
+
+<Steps>
+  <Step title="Connect to your VPS">
+    Access your VPS using the browser terminal or SSH. See the [Hostinger VPS guide](/server-management/hostinger-vps) if you need help.
+
+    <Frame caption="Connected to VPS">
+      <img src="/images/placeholders/server-management/terminal-env.png" alt="Terminal connected to VPS" />
+    </Frame>
+  </Step>
+
+  <Step title="Navigate to NTS Vortex directory">
+    ```bash
+    cd /opt/open-webui
+    ```
+
+    <Frame caption="In NTS Vortex directory">
+      <img src="/images/placeholders/server-management/cd-open-webui.png" alt="Terminal in open-webui directory" />
+    </Frame>
+  </Step>
+
+  <Step title="View the docker-compose file">
+    Display the contents of the configuration file:
+
+    ```bash
+    cat docker-compose.yml
+    ```
+
+    <Frame caption="Docker compose file contents">
+      <img src="/images/placeholders/server-management/docker-compose-view.png" alt="Terminal showing docker-compose.yml contents" />
+    </Frame>
+
+    Look for the `environment:` section to see current settings.
+  </Step>
+
+  <Step title="View the .env file (if it exists)">
+    ```bash
+    cat .env
+    ```
+
+    <Warning>
+    The `.env` file may contain sensitive information like API keys. Never share its contents publicly.
+    </Warning>
+  </Step>
+</Steps>
+
+## Common Environment Variables
+
+Here are the most commonly used environment variables in NTS Vortex:
+
+| Variable | Description | Example Value |
+|----------|-------------|---------------|
+| `OPENAI_API_KEY` | API key for OpenAI models | `sk-...` |
+| `OPENROUTER_API_KEY` | API key for OpenRouter | `sk-or-...` |
+| `WEBUI_SECRET_KEY` | Secret key for session security | Random string |
+| `WEBUI_AUTH` | Enable/disable authentication | `true` or `false` |
+| `DEFAULT_MODELS` | Models shown by default | Model IDs |
+| `ENABLE_SIGNUP` | Allow new user registration | `true` or `false` |
+| `ENABLE_IMAGE_GENERATION` | Enable AI image generation | `true` or `false` |
+
+## Modifying Environment Variables
+
+<Warning>
+Changing environment variables requires restarting NTS Vortex. Plan changes during low-usage periods.
+</Warning>
+
+### Method 1: Editing the .env File
+
+<Steps>
+  <Step title="Open the .env file for editing">
+    Use the nano text editor to edit the file:
+
+    ```bash
+    nano .env
+    ```
+
+    <Frame caption="Editing .env file">
+      <img src="/images/placeholders/server-management/nano-env.png" alt="Nano editor with .env file open" />
+    </Frame>
+  </Step>
+
+  <Step title="Make your changes">
+    Use the arrow keys to navigate. Each variable should be on its own line in the format:
+
+    ```
+    VARIABLE_NAME=value
+    ```
+
+    For example:
+    ```
+    ENABLE_SIGNUP=false
+    OPENROUTER_API_KEY=sk-or-your-api-key-here
+    ```
+  </Step>
+
+  <Step title="Save and exit">
+    - Press `Ctrl + X` to exit
+    - Press `Y` to confirm saving
+    - Press `Enter` to confirm the filename
+
+    <Frame caption="Saving in nano">
+      <img src="/images/placeholders/server-management/nano-save.png" alt="Nano editor save prompt" />
+    </Frame>
+  </Step>
+
+  <Step title="Restart NTS Vortex">
+    Apply the changes by restarting:
+
+    ```bash
+    docker compose down
+    docker compose up -d
+    ```
+
+    <Frame caption="Restarting NTS Vortex">
+      <img src="/images/placeholders/server-management/restart-compose.png" alt="Terminal showing restart commands" />
+    </Frame>
+  </Step>
+</Steps>
+
+### Method 2: Editing docker-compose.yml
+
+<Steps>
+  <Step title="Open docker-compose.yml for editing">
+    ```bash
+    nano docker-compose.yml
+    ```
+
+    <Frame caption="Docker compose file in editor">
+      <img src="/images/placeholders/server-management/nano-compose.png" alt="Nano editor with docker-compose.yml open" />
+    </Frame>
+  </Step>
+
+  <Step title="Find the environment section">
+    Look for a section that looks like this:
+
+    ```yaml
+    services:
+      open-webui:
+        environment:
+          - OPENAI_API_KEY=${OPENAI_API_KEY}
+          - ENABLE_SIGNUP=false
+    ```
+  </Step>
+
+  <Step title="Add or modify variables">
+    Add new variables or change existing ones in the `environment:` section:
+
+    ```yaml
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ENABLE_SIGNUP=false
+      - ENABLE_IMAGE_GENERATION=true
+    ```
+
+    <Tip>
+    Variables with `${VARIABLE_NAME}` pull their values from the `.env` file. Variables with direct values like `=true` are set directly.
+    </Tip>
+  </Step>
+
+  <Step title="Save and restart">
+    Save the file (`Ctrl + X`, then `Y`, then `Enter`) and restart:
+
+    ```bash
+    docker compose down
+    docker compose up -d
+    ```
+  </Step>
+</Steps>
+
+## Adding API Keys
+
+To add or update API keys like OpenRouter:
+
+<Steps>
+  <Step title="Edit the .env file">
+    ```bash
+    nano .env
+    ```
+  </Step>
+
+  <Step title="Add the API key">
+    Add a new line with your API key:
+
+    ```
+    OPENROUTER_API_KEY=sk-or-your-api-key-here
+    ```
+
+    <Warning>
+    Never share API keys or commit them to version control. Keep them secure.
+    </Warning>
+  </Step>
+
+  <Step title="Update docker-compose.yml if needed">
+    Make sure the variable is referenced in your docker-compose.yml:
+
+    ```yaml
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+    ```
+  </Step>
+
+  <Step title="Restart to apply">
+    ```bash
+    docker compose down
+    docker compose up -d
+    ```
+  </Step>
+</Steps>
+
+## Verifying Changes
+
+After making changes, verify they took effect:
+
+<Steps>
+  <Step title="Check container environment">
+    View the actual environment variables in the running container:
+
+    ```bash
+    docker exec open-webui env | grep -E "(OPENAI|OPENROUTER|ENABLE)"
+    ```
+
+    This shows only the relevant variables without exposing all values.
+
+    <Frame caption="Verifying environment variables">
+      <img src="/images/placeholders/server-management/verify-env.png" alt="Terminal showing environment variable values" />
+    </Frame>
+  </Step>
+
+  <Step title="Test in NTS Vortex">
+    Log in to NTS Vortex and test that your changes are working as expected.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Changes not taking effect">
+    - Make sure you saved the file
+    - Verify you restarted the container with `docker compose down` and `docker compose up -d`
+    - Check for typos in variable names
+  </Accordion>
+
+  <Accordion title="Container won't start after changes">
+    - Check the logs: `docker logs open-webui`
+    - Verify the YAML syntax in docker-compose.yml (indentation matters!)
+    - Review your changes for typos
+  </Accordion>
+
+  <Accordion title="API key not working">
+    - Verify the key is correct (copy-paste from the provider's dashboard)
+    - Check there are no extra spaces before or after the key
+    - Ensure the key hasn't expired or been revoked
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Set Up OpenRouter" icon="key" href="/models/openrouter-setup">
+    Learn how to configure OpenRouter API for more AI models.
+  </Card>
+  <Card title="Create AI Agents" icon="robot" href="/agents/creating-agents">
+    Build custom AI assistants for your team.
+  </Card>
+</CardGroup>
+

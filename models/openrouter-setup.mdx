@@ -1,0 +1,290 @@
+---
+title: "OpenRouter Setup"
+description: "Connect NTS Vortex to OpenRouter to access a wide variety of AI models"
+---
+
+## What is OpenRouter?
+
+OpenRouter is a service that gives you access to many different AI models through a single connection. Instead of setting up separate accounts with OpenAI, Anthropic, Google, and others, you can use OpenRouter to access models from all these providers.
+
+<Frame caption="OpenRouter provides access to multiple AI providers">
+  <img src="/images/placeholders/models/openrouter-diagram.png" alt="Diagram showing OpenRouter connecting to multiple AI providers" />
+</Frame>
+
+## Why Use OpenRouter?
+
+<CardGroup cols={2}>
+  <Card title="Many Models" icon="layer-group">
+    Access GPT-4, Claude, Gemini, Mistral, Llama, and many more models.
+  </Card>
+  <Card title="One API Key" icon="key">
+    Manage all your AI access through a single account and API key.
+  </Card>
+  <Card title="Cost Control" icon="dollar-sign">
+    See pricing for all models and choose the best balance of cost and performance.
+  </Card>
+  <Card title="Easy Setup" icon="rocket">
+    Simple configuration to add many models to NTS Vortex.
+  </Card>
+</CardGroup>
+
+## Getting an OpenRouter API Key
+
+<Steps>
+  <Step title="Create an OpenRouter account">
+    Go to [openrouter.ai](https://openrouter.ai) and click **Sign Up** or **Get Started**.
+
+    <Frame caption="OpenRouter homepage">
+      <img src="/images/placeholders/models/openrouter-homepage.png" alt="OpenRouter website homepage" />
+    </Frame>
+  </Step>
+
+  <Step title="Complete registration">
+    Sign up using your email, Google account, or other available method.
+
+    <Frame caption="OpenRouter sign up">
+      <img src="/images/placeholders/models/openrouter-signup.png" alt="OpenRouter registration page" />
+    </Frame>
+  </Step>
+
+  <Step title="Navigate to API Keys">
+    Once logged in, go to your account settings and find the **API Keys** section. This is usually at [openrouter.ai/keys](https://openrouter.ai/keys).
+
+    <Frame caption="API Keys section">
+      <img src="/images/placeholders/models/openrouter-keys-page.png" alt="OpenRouter API Keys page" />
+    </Frame>
+  </Step>
+
+  <Step title="Create a new API key">
+    Click **Create Key** or **New Key** to generate a new API key.
+
+    <Frame caption="Create new API key">
+      <img src="/images/placeholders/models/create-api-key.png" alt="Button to create new API key" />
+    </Frame>
+  </Step>
+
+  <Step title="Name your key">
+    Give your key a descriptive name like "NTS Vortex" so you can identify it later.
+
+    <Frame caption="Naming the API key">
+      <img src="/images/placeholders/models/name-api-key.png" alt="Field to enter API key name" />
+    </Frame>
+  </Step>
+
+  <Step title="Copy the API key">
+    Your new API key will be displayed. **Copy it immediately** - you won't be able to see it again!
+
+    <Frame caption="Copy your API key">
+      <img src="/images/placeholders/models/copy-api-key.png" alt="API key displayed with copy button" />
+    </Frame>
+
+    <Warning>
+    Save this key somewhere secure! If you lose it, you'll need to create a new one.
+    </Warning>
+  </Step>
+
+  <Step title="Add credits (if needed)">
+    OpenRouter requires credits to use. Go to the billing section to add funds.
+
+    <Frame caption="Adding credits">
+      <img src="/images/placeholders/models/add-credits.png" alt="OpenRouter billing page" />
+    </Frame>
+
+    <Tip>
+    Start with a small amount ($10-20) to test, then add more as needed.
+    </Tip>
+  </Step>
+</Steps>
+
+<Check>
+You now have an OpenRouter API key! Next, you'll add it to NTS Vortex.
+</Check>
+
+## Adding the API Key to NTS Vortex
+
+### Method 1: Through the Admin Panel
+
+<Steps>
+  <Step title="Access Admin Settings">
+    In NTS Vortex, go to **Settings** → **Admin Panel** → **Settings**.
+
+    <Frame caption="Admin Settings">
+      <img src="/images/placeholders/models/admin-settings-models.png" alt="Path to admin settings" />
+    </Frame>
+  </Step>
+
+  <Step title="Find Connections or External Services">
+    Look for a section called **Connections**, **External Services**, or **API Keys**.
+
+    <Frame caption="Connections settings">
+      <img src="/images/placeholders/models/connections-section.png" alt="Connections section in settings" />
+    </Frame>
+  </Step>
+
+  <Step title="Enter OpenRouter settings">
+    Find OpenRouter in the list and:
+    - Enable it (if there's a toggle)
+    - Paste your API key in the API Key field
+    - Set the API URL to: `https://openrouter.ai/api/v1`
+
+    <Frame caption="OpenRouter configuration">
+      <img src="/images/placeholders/models/openrouter-config.png" alt="OpenRouter configuration fields filled in" />
+    </Frame>
+  </Step>
+
+  <Step title="Save settings">
+    Click **Save** to apply your changes.
+
+    <Frame caption="Save button">
+      <img src="/images/placeholders/models/save-openrouter.png" alt="Save button after configuration" />
+    </Frame>
+  </Step>
+</Steps>
+
+### Method 2: Through Environment Variables
+
+If you prefer (or need) to configure via server settings:
+
+<Steps>
+  <Step title="Connect to your VPS">
+    Access your Hostinger VPS. See [Hostinger VPS Guide](/server-management/hostinger-vps) for instructions.
+  </Step>
+
+  <Step title="Edit the environment file">
+    ```bash
+    cd /opt/open-webui
+    nano .env
+    ```
+  </Step>
+
+  <Step title="Add the OpenRouter API key">
+    Add or update these lines:
+    
+    ```
+    OPENROUTER_API_KEY=sk-or-v1-your-api-key-here
+    OPENROUTER_API_BASE_URL=https://openrouter.ai/api/v1
+    ```
+
+    Replace `sk-or-v1-your-api-key-here` with your actual API key.
+  </Step>
+
+  <Step title="Save and restart">
+    Save the file (Ctrl+X, then Y, then Enter) and restart:
+    
+    ```bash
+    docker compose down
+    docker compose up -d
+    ```
+  </Step>
+</Steps>
+
+## Verifying the Connection
+
+After adding your API key, verify it's working:
+
+<Steps>
+  <Step title="Start a new chat">
+    Go to the main chat interface in NTS Vortex.
+  </Step>
+
+  <Step title="Open the model selector">
+    Click on the model dropdown. You should see new models available from OpenRouter.
+
+    <Frame caption="Models available via OpenRouter">
+      <img src="/images/placeholders/models/openrouter-models-list.png" alt="Model selector showing OpenRouter models" />
+    </Frame>
+  </Step>
+
+  <Step title="Test a model">
+    Select an OpenRouter model and send a test message. If it responds, your connection is working!
+
+    <Frame caption="Testing an OpenRouter model">
+      <img src="/images/placeholders/models/test-openrouter.png" alt="Chat showing successful response from OpenRouter model" />
+    </Frame>
+  </Step>
+</Steps>
+
+<Check>
+OpenRouter is connected! Your users can now access a variety of AI models.
+</Check>
+
+## Popular Models Available via OpenRouter
+
+Once connected, you'll have access to models like:
+
+| Model | Provider | Best For |
+|-------|----------|----------|
+| GPT-4o | OpenAI | General purpose, complex reasoning |
+| GPT-4o-mini | OpenAI | Fast, cost-effective |
+| Claude 3.5 Sonnet | Anthropic | Documents, careful analysis |
+| Claude 3 Opus | Anthropic | Complex, nuanced tasks |
+| Gemini Pro | Google | Multimodal, long context |
+| Mistral Large | Mistral | Fast, efficient |
+| Llama 3 | Meta | Open source, good performance |
+
+<Info>
+Model availability and pricing may change. Check [openrouter.ai/models](https://openrouter.ai/models) for current information.
+</Info>
+
+## Managing Costs
+
+<Tip>
+Monitor your OpenRouter usage regularly to avoid unexpected charges.
+</Tip>
+
+### Setting Limits
+
+On OpenRouter, you can set:
+- **Monthly budget limits** - Cap spending per month
+- **Rate limits** - Control usage per minute/hour
+
+<Frame caption="OpenRouter usage dashboard">
+  <img src="/images/placeholders/models/openrouter-usage.png" alt="OpenRouter usage and billing dashboard" />
+</Frame>
+
+### Cost Tips
+
+- Use GPT-4o-mini or Claude Haiku for simple tasks (much cheaper)
+- Reserve expensive models like GPT-4 or Claude Opus for complex needs
+- Monitor usage weekly to understand patterns
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Models not appearing">
+    - Verify the API key is entered correctly
+    - Check that OpenRouter is enabled
+    - Try refreshing the page
+    - Restart NTS Vortex if needed
+  </Accordion>
+
+  <Accordion title="Authentication errors">
+    - Double-check your API key (no extra spaces)
+    - Verify the key hasn't been revoked
+    - Ensure you have credits in your OpenRouter account
+  </Accordion>
+
+  <Accordion title="Models return errors">
+    - Check your OpenRouter credit balance
+    - Some models have usage limits - try a different model
+    - Check OpenRouter's status page for outages
+  </Accordion>
+
+  <Accordion title="High costs">
+    - Review which models are being used most
+    - Consider setting default models to cheaper options
+    - Implement monthly budget limits on OpenRouter
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Select Models" icon="list-check" href="/models/selecting-models">
+    Choose which models are available to your users.
+  </Card>
+  <Card title="Image Generation" icon="image" href="/models/image-generation">
+    Set up AI image generation capabilities.
+  </Card>
+</CardGroup>
+

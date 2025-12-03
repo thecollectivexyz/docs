@@ -1,0 +1,305 @@
+---
+title: "Image Generation"
+description: "Configure AI image generation in NTS Vortex for creating visual content"
+---
+
+## Overview
+
+NTS Vortex can generate images using AI. This feature lets users create visuals for presentations, marketing materials, documentation, and more—all through simple text descriptions.
+
+<Frame caption="Example of AI-generated images">
+  <img src="/images/placeholders/models/image-gen-examples.png" alt="Examples of AI-generated images" />
+</Frame>
+
+## Available Image Generation Models
+
+Common image generation models include:
+
+| Model | Provider | Strengths |
+|-------|----------|-----------|
+| DALL-E 3 | OpenAI | High quality, follows prompts well |
+| DALL-E 2 | OpenAI | Good quality, lower cost |
+| Stable Diffusion | Various | Versatile, many options |
+| Midjourney | Midjourney | Artistic, creative styles |
+
+<Info>
+Available models depend on your configured providers and API connections.
+</Info>
+
+## Enabling Image Generation
+
+<Steps>
+  <Step title="Access Admin Settings">
+    Go to **Settings** → **Admin Panel** → **Settings**.
+
+    <Frame caption="Admin settings path">
+      <img src="/images/placeholders/models/admin-image-settings.png" alt="Path to admin settings" />
+    </Frame>
+  </Step>
+
+  <Step title="Find Image Settings">
+    Look for **Images**, **Image Generation**, or **Media** settings.
+
+    <Frame caption="Image settings section">
+      <img src="/images/placeholders/models/image-settings-section.png" alt="Image generation settings section" />
+    </Frame>
+  </Step>
+
+  <Step title="Enable image generation">
+    Toggle the **Enable Image Generation** option on.
+
+    <Frame caption="Enable toggle">
+      <img src="/images/placeholders/models/enable-image-gen.png" alt="Toggle to enable image generation" />
+    </Frame>
+  </Step>
+
+  <Step title="Configure the provider">
+    Select your image generation provider and enter any required API keys.
+
+    <Frame caption="Provider configuration">
+      <img src="/images/placeholders/models/image-provider-config.png" alt="Image provider configuration fields" />
+    </Frame>
+  </Step>
+
+  <Step title="Save settings">
+    Click **Save** to apply your configuration.
+  </Step>
+</Steps>
+
+## Setting the Default Image Model
+
+<Steps>
+  <Step title="Find default image model setting">
+    In the image settings, look for **Default Image Model** or **Image Model Selection**.
+
+    <Frame caption="Default image model setting">
+      <img src="/images/placeholders/models/default-image-model.png" alt="Default image model dropdown" />
+    </Frame>
+  </Step>
+
+  <Step title="Select your preferred model">
+    Choose which model to use by default:
+    
+    - **DALL-E 3**: Best quality, higher cost
+    - **DALL-E 2**: Good quality, more affordable
+    - **Stable Diffusion**: Versatile, various styles
+
+    <Frame caption="Selecting default image model">
+      <img src="/images/placeholders/models/select-image-model.png" alt="Dropdown showing image model options" />
+    </Frame>
+  </Step>
+
+  <Step title="Save your selection">
+    Click **Save** to set the default.
+  </Step>
+</Steps>
+
+## Configuring Image Settings
+
+### Image Size
+
+Set default image dimensions:
+
+<Frame caption="Image size settings">
+  <img src="/images/placeholders/models/image-size-settings.png" alt="Image size configuration options" />
+</Frame>
+
+| Size | Best For |
+|------|----------|
+| 256x256 | Thumbnails, quick previews |
+| 512x512 | Social media, general use |
+| 1024x1024 | High quality, presentations |
+| 1792x1024 | Wide format, banners |
+| 1024x1792 | Tall format, posters |
+
+### Quality Settings
+
+If available, configure quality:
+- **Standard**: Faster, lower cost
+- **HD/High Quality**: Better detail, higher cost
+
+<Frame caption="Quality settings">
+  <img src="/images/placeholders/models/image-quality.png" alt="Image quality configuration" />
+</Frame>
+
+### Style Options
+
+Some models support style preferences:
+- **Natural**: Realistic-looking images
+- **Vivid**: More dramatic, stylized images
+
+<Frame caption="Style options">
+  <img src="/images/placeholders/models/image-style.png" alt="Image style selection" />
+</Frame>
+
+## Using Image Generation
+
+Once enabled, users can generate images:
+
+<Steps>
+  <Step title="Start a chat">
+    Open a new chat or continue an existing conversation.
+  </Step>
+
+  <Step title="Request an image">
+    Ask the AI to create an image. Examples:
+    - "Create an image of a cargo truck on a highway at sunset"
+    - "Generate a professional logo concept for a logistics company"
+    - "Make an illustration of a warehouse with forklifts"
+
+    <Frame caption="Requesting an image">
+      <img src="/images/placeholders/models/request-image.png" alt="Chat input requesting an image" />
+    </Frame>
+  </Step>
+
+  <Step title="View the result">
+    The generated image appears in the chat.
+
+    <Frame caption="Generated image in chat">
+      <img src="/images/placeholders/models/generated-image.png" alt="AI-generated image displayed in chat" />
+    </Frame>
+  </Step>
+
+  <Step title="Download or share">
+    Click on the image to download or share it.
+
+    <Frame caption="Download option">
+      <img src="/images/placeholders/models/download-image.png" alt="Download button on generated image" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Image Generation Best Practices
+
+<AccordionGroup>
+  <Accordion title="Writing effective prompts">
+    Good prompts lead to better images:
+    
+    **Basic prompt:**
+    > "A truck"
+    
+    **Better prompt:**
+    > "A modern red semi-truck driving on a desert highway at golden hour, professional photography style, high detail"
+    
+    Include:
+    - Subject description
+    - Setting/background
+    - Style or mood
+    - Quality descriptors
+  </Accordion>
+
+  <Accordion title="Professional use tips">
+    For business materials:
+    - Specify "professional" or "corporate" style
+    - Request "clean" or "minimalist" designs
+    - Mention intended use (presentation, report, etc.)
+    - Ask for specific color schemes if needed
+  </Accordion>
+
+  <Accordion title="Iterating on results">
+    If the first result isn't quite right:
+    - Ask for modifications: "Make it more vibrant"
+    - Request variations: "Show me 3 different versions"
+    - Be more specific: "Change the background to blue"
+  </Accordion>
+</AccordionGroup>
+
+## Cost Considerations
+
+Image generation costs vary by model and quality:
+
+| Model | Approximate Cost |
+|-------|-----------------|
+| DALL-E 3 HD | Higher |
+| DALL-E 3 Standard | Medium |
+| DALL-E 2 | Lower |
+
+<Tip>
+For drafts and experimentation, use lower-cost options. Save high-quality generation for final versions.
+</Tip>
+
+### Monitoring Usage
+
+Keep track of image generation usage:
+
+<Frame caption="Usage monitoring">
+  <img src="/images/placeholders/models/image-usage.png" alt="Dashboard showing image generation usage" />
+</Frame>
+
+## Restricting Image Generation
+
+If needed, you can limit who can generate images:
+
+<Steps>
+  <Step title="Find permission settings">
+    Look for user permissions or role settings in the admin panel.
+
+    <Frame caption="Permission settings">
+      <img src="/images/placeholders/models/image-permissions.png" alt="Permission settings for image generation" />
+    </Frame>
+  </Step>
+
+  <Step title="Configure access">
+    Set which user groups can use image generation:
+    - All users
+    - Specific roles only
+    - Admins only
+  </Step>
+</Steps>
+
+## Content Guidelines
+
+<Warning>
+AI image generation should be used responsibly. Ensure generated images:
+- Are appropriate for workplace use
+- Don't infringe on trademarks or copyrights
+- Align with NTS brand and values
+</Warning>
+
+Most AI image generators have content filters that prevent:
+- Inappropriate content
+- Copyrighted characters/logos
+- Real people's likenesses
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Image generation not working">
+    - Verify image generation is enabled in settings
+    - Check that the API key is valid
+    - Ensure you have credits/quota remaining
+    - Try a simpler prompt
+  </Accordion>
+
+  <Accordion title="Images are low quality">
+    - Check quality settings (switch to HD if available)
+    - Use larger image sizes
+    - Write more detailed prompts
+    - Try a different model
+  </Accordion>
+
+  <Accordion title="Request rejected">
+    - The prompt may have triggered content filters
+    - Try rephrasing the request
+    - Remove any potentially problematic terms
+  </Accordion>
+
+  <Accordion title="Generation takes too long">
+    - Higher quality settings take longer
+    - Larger sizes take longer
+    - Try standard quality for faster results
+    - Check your internet connection
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Create Agents" icon="robot" href="/agents/creating-agents">
+    Build agents that can create images.
+  </Card>
+  <Card title="Chat Features" icon="comments" href="/chat-features/channels">
+    Learn how to use AI in team channels.
+  </Card>
+</CardGroup>
+

@@ -1,68 +1,64 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "NTS Vortex Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#F97316",
+    "light": "#FB923C",
+    "dark": "#EA580C"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "getting-started/overview",
+              "getting-started/first-login"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Server Management",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "server-management/hostinger-vps",
+              "server-management/updating-docker",
+              "server-management/environment-variables"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "AI Agents",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "agents/overview",
+              "agents/creating-agents",
+              "agents/editing-agents"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Knowledge Base",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+              "knowledge-base/overview",
+              "knowledge-base/adding-documents",
+              "knowledge-base/mistral-ocr"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "AI Models",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "models/openrouter-setup",
+              "models/selecting-models",
+              "models/image-generation"
+            ]
+          },
+          {
+            "group": "Chat Features",
+            "pages": [
+              "chat-features/channels",
+              "chat-features/tagging-models",
+              "chat-features/chat-history"
             ]
           }
         ]
@@ -71,14 +67,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "NTS Logistics",
+          "href": "https://ntslogistics.com",
+          "icon": "truck"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Support",
+          "href": "mailto:info@ntslogistics.com",
+          "icon": "envelope"
         }
       ]
     }
@@ -91,32 +87,20 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:info@ntslogistics.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "NTS Vortex",
+      "href": "https://ntslogistics.com"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/ntslogistics",
+      "linkedin": "https://linkedin.com/company/nationwide-transport-services",
+      "facebook": "https://facebook.com/ntslogistics"
     }
   }
 }

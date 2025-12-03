@@ -1,0 +1,149 @@
+---
+title: "Knowledge Base Overview"
+description: "Learn how the NTS Vortex knowledge base works and how it makes AI smarter about your business"
+---
+
+## What is the Knowledge Base?
+
+The Knowledge Base is where you store documents that NTS Vortex can reference when answering questions. When you upload documents to the knowledge base, the AI can search through them to provide accurate, company-specific information.
+
+<Frame caption="Knowledge base main view">
+  <img src="/images/placeholders/knowledge-base/knowledge-overview.png" alt="Knowledge base dashboard showing uploaded documents" />
+</Frame>
+
+## How It Works
+
+<Steps>
+  <Step title="You upload documents">
+    Add PDFs, Word documents, text files, and other documents to NTS Vortex.
+  </Step>
+  <Step title="Documents are processed">
+    NTS Vortex analyzes and indexes the content, breaking it into searchable chunks.
+  </Step>
+  <Step title="AI searches when needed">
+    When users ask questions, the AI searches the knowledge base for relevant information.
+  </Step>
+  <Step title="Accurate answers">
+    The AI uses the found information to provide accurate, source-based responses.
+  </Step>
+</Steps>
+
+## Why Use a Knowledge Base?
+
+<CardGroup cols={2}>
+  <Card title="Company-Specific Answers" icon="building">
+    AI can answer questions about NTS policies, procedures, and services.
+  </Card>
+  <Card title="Accurate Information" icon="check">
+    Responses are grounded in your actual documents, not general knowledge.
+  </Card>
+  <Card title="Time Savings" icon="clock">
+    Employees find answers instantly instead of searching through files.
+  </Card>
+  <Card title="Consistent Responses" icon="equals">
+    Everyone gets the same accurate information from the same sources.
+  </Card>
+</CardGroup>
+
+## What Can You Upload?
+
+NTS Vortex supports many document types:
+
+| Document Type | File Extensions | Best For |
+|--------------|-----------------|----------|
+| PDF Documents | `.pdf` | Policies, manuals, reports |
+| Word Documents | `.doc`, `.docx` | Procedures, guidelines |
+| Text Files | `.txt` | Plain text content |
+| Markdown | `.md` | Formatted documentation |
+| Web Pages | URL import | Online resources |
+| Spreadsheets | `.csv`, `.xlsx` | Data tables, lists |
+
+<Tip>
+PDF is the most reliable format. When possible, convert documents to PDF before uploading.
+</Tip>
+
+## Knowledge Collections
+
+Documents are organized into **Collections** (sometimes called "Knowledge Bases"). Think of collections as folders that group related documents together.
+
+<Frame caption="Knowledge collections list">
+  <img src="/images/placeholders/knowledge-base/collections-list.png" alt="List of knowledge collections" />
+</Frame>
+
+**Example collections for NTS:**
+
+- **Employee Policies** - Handbook, HR policies, benefits information
+- **Operations Manual** - Procedures, safety guidelines, equipment info
+- **Customer Info** - FAQs, service descriptions, pricing guides
+- **DOT Regulations** - Compliance documents, regulations
+
+## Connecting Knowledge to Agents
+
+Knowledge collections can be connected to specific agents:
+
+<Frame caption="Connecting knowledge to agent">
+  <img src="/images/placeholders/knowledge-base/connect-to-agent.png" alt="Interface showing knowledge being connected to an agent" />
+</Frame>
+
+| Configuration | Result |
+|--------------|--------|
+| No knowledge connected | Agent uses only general AI knowledge |
+| Specific collections connected | Agent can reference those documents |
+| Multiple collections connected | Agent searches across all connected documents |
+
+<Info>
+Connecting relevant knowledge makes agents much more useful for specific tasks.
+</Info>
+
+## Best Practices
+
+### Document Quality
+
+<Tip>
+**Clean documents work better.** The AI can only be as good as the documents it reads.
+</Tip>
+
+- Use searchable PDFs (not scanned images without OCR)
+- Ensure documents are well-organized with clear headings
+- Keep documents up to date
+- Remove outdated versions
+
+### Organization
+
+- Create logical collections that match your departments or topics
+- Use descriptive names for collections and documents
+- Don't upload duplicate documents
+- Regularly review and clean up old content
+
+### Sizing
+
+- Large documents work, but consider splitting very long documents
+- Balance between having enough content and keeping things focused
+- Test after uploading to make sure the AI can find relevant information
+
+## Privacy and Security
+
+<Warning>
+Only upload documents that are appropriate for AI to access and reference. Consider:
+- Who will be asking questions about these documents?
+- Is the information appropriate to share via AI responses?
+- Are there any confidentiality concerns?
+</Warning>
+
+Documents uploaded to NTS Vortex:
+- Are stored on your dedicated server
+- Are only accessible within your NTS Vortex instance
+- Can be deleted at any time
+- Are not shared externally
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add Documents" icon="upload" href="/knowledge-base/adding-documents">
+    Learn how to upload documents to the knowledge base.
+  </Card>
+  <Card title="Use Mistral OCR" icon="eye" href="/knowledge-base/mistral-ocr">
+    Process scanned documents with OCR technology.
+  </Card>
+</CardGroup>
+

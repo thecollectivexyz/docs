@@ -1,0 +1,313 @@
+---
+title: "Creating Agents"
+description: "Step-by-step guide to creating custom AI agents in NTS Vortex"
+---
+
+## Overview
+
+Creating an agent allows you to build a specialized AI assistant with custom instructions, knowledge, and capabilities. This guide walks you through the entire process.
+
+<Info>
+Creating agents requires administrator access. If you don't see the options described below, contact your NTS administrator.
+</Info>
+
+## Before You Start
+
+Before creating an agent, plan out:
+
+1. **Purpose** - What will this agent help with?
+2. **Audience** - Who will use this agent?
+3. **Knowledge** - What documents or information does it need?
+4. **Behavior** - How should it respond? What tone should it use?
+
+## Creating a New Agent
+
+<Steps>
+  <Step title="Navigate to Workspace">
+    Click on **Workspace** in the left sidebar, then select **Agents** (or **Models** depending on your version).
+
+    <Frame caption="Navigating to Agents section">
+      <img src="/images/placeholders/agents/navigate-workspace.png" alt="Sidebar showing Workspace menu with Agents option" />
+    </Frame>
+  </Step>
+
+  <Step title="Click Create New Agent">
+    Click the **+ Create** button or **New Agent** button to start creating a new agent.
+
+    <Frame caption="Create new agent button">
+      <img src="/images/placeholders/agents/create-button.png" alt="Create new agent button location" />
+    </Frame>
+  </Step>
+
+  <Step title="Enter basic information">
+    Fill in the basic details for your agent:
+
+    - **Name**: A clear, descriptive name (e.g., "NTS Policy Assistant")
+    - **Description**: Brief explanation of what the agent does
+    - **Avatar/Image**: Optional image to represent the agent
+
+    <Frame caption="Basic agent information form">
+      <img src="/images/placeholders/agents/basic-info.png" alt="Form showing name, description, and avatar fields" />
+    </Frame>
+  </Step>
+
+  <Step title="Select the base model">
+    Choose which AI model will power your agent. Click on the **Model** dropdown and select a model.
+
+    <Frame caption="Model selection dropdown">
+      <img src="/images/placeholders/agents/model-dropdown.png" alt="Dropdown showing available AI models" />
+    </Frame>
+
+    **Recommended models:**
+    
+    | Use Case | Recommended Model |
+    |----------|-------------------|
+    | General assistance | GPT-4 or Claude |
+    | Quick responses | GPT-3.5 Turbo |
+    | Document analysis | Claude |
+    | Cost-effective | Mistral or GPT-3.5 |
+
+    <Tip>
+    If you don't see many models, make sure OpenRouter is configured. See [OpenRouter Setup](/models/openrouter-setup).
+    </Tip>
+  </Step>
+
+  <Step title="Write the system prompt">
+    The system prompt is the most critical part of your agent. Click on the **System Prompt** field and write detailed instructions.
+
+    <Frame caption="System prompt text area">
+      <img src="/images/placeholders/agents/system-prompt.png" alt="System prompt text area with example text" />
+    </Frame>
+
+    **Example system prompt:**
+
+    ```
+    You are the NTS Policy Assistant, an expert on Nationwide Transport Services' 
+    internal policies and procedures.
+
+    Your role:
+    - Answer questions about company policies
+    - Help employees find relevant policy information
+    - Explain procedures clearly and concisely
+
+    Guidelines:
+    - Always cite the specific policy or document name when providing information
+    - If you're unsure about something, say so clearly
+    - Be professional and helpful
+    - If a question is outside your knowledge, recommend contacting HR
+
+    You have access to the NTS Employee Handbook and Policy Documents in your 
+    knowledge base. Use these to provide accurate information.
+    ```
+
+    <Tip>
+    **System Prompt Tips:**
+    - Be specific about the agent's role and expertise
+    - List what it should and shouldn't do
+    - Define the tone and style of responses
+    - Mention the knowledge base documents it can reference
+    </Tip>
+  </Step>
+
+  <Step title="Add knowledge (optional)">
+    Connect documents to give your agent specific knowledge. Click on **Knowledge** or **Knowledge Base** section.
+
+    <Frame caption="Knowledge base section">
+      <img src="/images/placeholders/agents/knowledge-section.png" alt="Knowledge base selection area" />
+    </Frame>
+
+    Select the knowledge collections you want the agent to access. If you haven't created any knowledge bases yet, see [Adding Documents](/knowledge-base/adding-documents).
+
+    <Frame caption="Selecting knowledge collections">
+      <img src="/images/placeholders/agents/select-knowledge.png" alt="Checkboxes for selecting knowledge collections" />
+    </Frame>
+  </Step>
+
+  <Step title="Configure additional settings">
+    Expand the **Advanced Settings** or **Additional Options** section to configure:
+
+    <Frame caption="Advanced settings panel">
+      <img src="/images/placeholders/agents/advanced-settings.png" alt="Advanced settings panel with various options" />
+    </Frame>
+
+    **Temperature**: Controls creativity (0 = focused, 1 = creative)
+    - Use lower values (0.1-0.3) for factual responses
+    - Use higher values (0.7-0.9) for creative content
+
+    **Max Tokens**: Maximum length of responses
+    - Higher values allow longer responses
+    - Consider your users' needs when setting this
+
+    **Capabilities**: Enable or disable specific features
+    - Web search (if available)
+    - Code execution (if available)
+    - Image generation (if available)
+  </Step>
+
+  <Step title="Set visibility">
+    Choose who can access this agent:
+
+    <Frame caption="Visibility settings">
+      <img src="/images/placeholders/agents/visibility.png" alt="Visibility options showing private and public" />
+    </Frame>
+
+    - **Private**: Only you can use this agent
+    - **Public**: All users in your organization can use this agent
+  </Step>
+
+  <Step title="Save the agent">
+    Click the **Save** or **Create** button to save your new agent.
+
+    <Frame caption="Save agent button">
+      <img src="/images/placeholders/agents/save-button.png" alt="Save button highlighted" />
+    </Frame>
+  </Step>
+</Steps>
+
+<Check>
+Your agent has been created! It will now appear in the agents list for users to access.
+</Check>
+
+## Testing Your Agent
+
+After creating an agent, test it thoroughly:
+
+<Steps>
+  <Step title="Start a new chat">
+    Go to the main chat area and click **New Chat**.
+  </Step>
+
+  <Step title="Select your agent">
+    Click on the model selector and find your newly created agent.
+
+    <Frame caption="Selecting the new agent">
+      <img src="/images/placeholders/agents/select-agent-chat.png" alt="Model selector showing the new agent" />
+    </Frame>
+  </Step>
+
+  <Step title="Test various scenarios">
+    Ask questions that cover different use cases:
+    
+    - Questions it should answer well
+    - Edge cases and tricky questions
+    - Questions it should decline or redirect
+
+    <Frame caption="Testing the agent">
+      <img src="/images/placeholders/agents/test-conversation.png" alt="Chat conversation testing the agent" />
+    </Frame>
+  </Step>
+
+  <Step title="Refine as needed">
+    Based on testing, you may need to adjust:
+    - The system prompt for better responses
+    - The knowledge base for more accurate information
+    - The model for different capabilities
+  </Step>
+</Steps>
+
+## System Prompt Templates
+
+Here are templates you can customize for common agent types:
+
+<AccordionGroup>
+  <Accordion title="Customer Support Template">
+    ```
+    You are a customer support representative for [COMPANY NAME].
+
+    Your role is to:
+    - Answer customer questions about our services
+    - Help with common issues and concerns
+    - Provide accurate information about [SPECIFIC TOPICS]
+
+    Communication style:
+    - Be friendly, professional, and patient
+    - Use simple language, avoid jargon
+    - Show empathy when customers are frustrated
+
+    Important guidelines:
+    - Never make promises you can't keep
+    - If unsure, say "Let me connect you with a specialist"
+    - Always verify information before sharing
+    - Protect customer privacy - never ask for sensitive data
+
+    You have access to our FAQ and service documentation.
+    ```
+  </Accordion>
+
+  <Accordion title="Internal Knowledge Base Template">
+    ```
+    You are an internal knowledge assistant for [DEPARTMENT/COMPANY].
+
+    Your purpose:
+    - Help employees find information quickly
+    - Answer questions about policies and procedures
+    - Guide people to the right resources
+
+    When responding:
+    - Always cite the source document when providing policy information
+    - Be concise but thorough
+    - If information might be outdated, recommend verifying with [CONTACT]
+
+    You have access to:
+    - Employee handbook
+    - Policy documents
+    - [OTHER DOCUMENTS]
+
+    If asked about topics outside your knowledge, direct the employee to 
+    the appropriate department.
+    ```
+  </Accordion>
+
+  <Accordion title="Technical Assistant Template">
+    ```
+    You are a technical assistant specializing in [TECHNICAL AREA].
+
+    Your expertise includes:
+    - [SPECIFIC TOPIC 1]
+    - [SPECIFIC TOPIC 2]
+    - [SPECIFIC TOPIC 3]
+
+    When helping users:
+    - Ask clarifying questions when the problem isn't clear
+    - Provide step-by-step instructions when possible
+    - Explain technical concepts in simple terms
+    - Include relevant documentation links when available
+
+    If an issue is beyond your scope or requires hands-on intervention,
+    recommend contacting [SUPPORT TEAM/CONTACT].
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Agent not appearing in list">
+    - Make sure you saved the agent
+    - Refresh the page
+    - Check if visibility is set correctly
+  </Accordion>
+
+  <Accordion title="Agent gives wrong information">
+    - Review and refine your system prompt
+    - Check if the correct knowledge base is attached
+    - Make the instructions more specific
+  </Accordion>
+
+  <Accordion title="Agent responses are too long/short">
+    - Adjust the Max Tokens setting
+    - Add instructions about response length in the system prompt
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Edit Agents" icon="pen" href="/agents/editing-agents">
+    Learn how to modify and improve existing agents.
+  </Card>
+  <Card title="Add Knowledge" icon="book" href="/knowledge-base/adding-documents">
+    Upload documents to make your agents smarter.
+  </Card>
+</CardGroup>
+

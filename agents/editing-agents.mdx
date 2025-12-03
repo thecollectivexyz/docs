@@ -1,0 +1,308 @@
+---
+title: "Editing Agents"
+description: "Learn how to modify, improve, and manage existing agents in NTS Vortex"
+---
+
+## Overview
+
+As you use your agents and receive feedback from your team, you'll want to refine and improve them. This guide covers how to edit existing agents and best practices for ongoing maintenance.
+
+## Accessing Agent Settings
+
+<Steps>
+  <Step title="Navigate to Workspace">
+    Click on **Workspace** in the left sidebar, then select **Agents** (or **Models**).
+
+    <Frame caption="Navigate to Agents">
+      <img src="/images/placeholders/agents/navigate-agents-edit.png" alt="Sidebar showing path to Agents section" />
+    </Frame>
+  </Step>
+
+  <Step title="Find your agent">
+    Locate the agent you want to edit in the list. You can use the search bar if you have many agents.
+
+    <Frame caption="Agent list with search">
+      <img src="/images/placeholders/agents/agent-list-search.png" alt="List of agents with search functionality" />
+    </Frame>
+  </Step>
+
+  <Step title="Open agent settings">
+    Click on the agent name or the **Edit** button (pencil icon) to open the agent's settings.
+
+    <Frame caption="Edit button on agent">
+      <img src="/images/placeholders/agents/edit-button.png" alt="Edit button highlighted on an agent card" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Editing Basic Information
+
+You can modify any of the following:
+
+### Name and Description
+
+<Frame caption="Editing name and description">
+  <img src="/images/placeholders/agents/edit-name-desc.png" alt="Name and description fields being edited" />
+</Frame>
+
+Update the name if the agent's purpose has changed, or improve the description to better explain what it does.
+
+<Tip>
+Clear descriptions help users choose the right agent. Be specific about what the agent can and cannot do.
+</Tip>
+
+### Avatar/Image
+
+Click on the current avatar to upload a new image or select from available options.
+
+<Frame caption="Changing agent avatar">
+  <img src="/images/placeholders/agents/change-avatar.png" alt="Avatar selection interface" />
+</Frame>
+
+## Improving the System Prompt
+
+The system prompt is the most common thing you'll edit as you refine your agent.
+
+<Steps>
+  <Step title="Review current performance">
+    Before editing, note specific issues:
+    - What questions is it answering poorly?
+    - Is it too verbose or too brief?
+    - Does it maintain the right tone?
+    - Is it missing important information?
+  </Step>
+
+  <Step title="Edit the system prompt">
+    Click on the **System Prompt** section to modify it.
+
+    <Frame caption="Editing system prompt">
+      <img src="/images/placeholders/agents/edit-system-prompt.png" alt="System prompt being edited" />
+    </Frame>
+  </Step>
+
+  <Step title="Make targeted improvements">
+    Address specific issues with targeted changes:
+
+    **For better accuracy:**
+    ```
+    Add: "Always verify information against the knowledge base before responding."
+    ```
+
+    **For appropriate length:**
+    ```
+    Add: "Keep responses concise - aim for 2-3 paragraphs unless more detail is requested."
+    ```
+
+    **For better tone:**
+    ```
+    Add: "Use a friendly, professional tone. Avoid jargon unless speaking to technical users."
+    ```
+
+    **For handling unknown questions:**
+    ```
+    Add: "If you don't have enough information to answer, say 'I don't have specific information about that. For the most accurate answer, please contact [appropriate department].'"
+    ```
+  </Step>
+
+  <Step title="Save and test">
+    Save your changes and test the agent with the questions that were problematic before.
+  </Step>
+</Steps>
+
+## Changing the Model
+
+If your agent isn't performing well, you might need a different AI model.
+
+<Frame caption="Changing the model">
+  <img src="/images/placeholders/agents/change-model.png" alt="Model dropdown being changed" />
+</Frame>
+
+**When to change models:**
+
+| Issue | Solution |
+|-------|----------|
+| Responses are too simple | Upgrade to GPT-4 or Claude |
+| Responses are too slow | Downgrade to GPT-3.5 Turbo |
+| Not following instructions well | Try Claude (better at following complex instructions) |
+| High costs | Switch to a more economical model like Mistral |
+
+<Warning>
+Changing the model may significantly change how the agent responds. Always test thoroughly after changing models.
+</Warning>
+
+## Updating Knowledge Base
+
+To add or remove knowledge from an agent:
+
+<Steps>
+  <Step title="Open knowledge settings">
+    Scroll to the **Knowledge** or **Knowledge Base** section in the agent settings.
+
+    <Frame caption="Knowledge base settings">
+      <img src="/images/placeholders/agents/knowledge-settings.png" alt="Knowledge base settings panel" />
+    </Frame>
+  </Step>
+
+  <Step title="Modify selections">
+    - Check boxes to **add** knowledge collections
+    - Uncheck boxes to **remove** knowledge collections
+
+    <Frame caption="Selecting knowledge collections">
+      <img src="/images/placeholders/agents/modify-knowledge.png" alt="Checkboxes for knowledge collection selection" />
+    </Frame>
+  </Step>
+
+  <Step title="Update system prompt if needed">
+    If you add new knowledge, update the system prompt to tell the agent about it:
+    
+    ```
+    You now have access to [NEW DOCUMENT]. Use this to answer questions about [TOPIC].
+    ```
+  </Step>
+</Steps>
+
+## Adjusting Advanced Settings
+
+<Frame caption="Advanced settings panel">
+  <img src="/images/placeholders/agents/edit-advanced.png" alt="Advanced settings panel showing temperature and token settings" />
+</Frame>
+
+### Temperature
+
+Adjust the creativity level:
+- **Lower (0.1-0.3)**: More consistent, factual responses
+- **Medium (0.4-0.6)**: Balanced responses
+- **Higher (0.7-1.0)**: More creative, varied responses
+
+### Max Tokens
+
+Control response length:
+- Increase if responses are getting cut off
+- Decrease if responses are too long
+
+### Other Settings
+
+Enable or disable capabilities based on your needs:
+- Web search
+- Code execution
+- Image generation
+
+## Duplicating Agents
+
+To create a variation of an existing agent:
+
+<Steps>
+  <Step title="Find the duplicate option">
+    Look for a **Duplicate** or **Clone** button in the agent's menu.
+
+    <Frame caption="Duplicate option">
+      <img src="/images/placeholders/agents/duplicate-option.png" alt="Menu showing duplicate option" />
+    </Frame>
+  </Step>
+
+  <Step title="Modify the copy">
+    The duplicated agent will have the same settings. Edit it to create your variation.
+  </Step>
+
+  <Step title="Rename clearly">
+    Give the duplicated agent a distinct name to avoid confusion.
+  </Step>
+</Steps>
+
+<Tip>
+Duplicating is useful when you want to:
+- Create department-specific versions of a general agent
+- Test changes without affecting the original
+- Create agents for different user groups
+</Tip>
+
+## Deleting Agents
+
+<Warning>
+Deleting an agent is permanent. Users will no longer be able to access it, and chat history with that agent may be affected.
+</Warning>
+
+<Steps>
+  <Step title="Find the delete option">
+    Look for a **Delete** button or trash icon in the agent settings or list.
+
+    <Frame caption="Delete option">
+      <img src="/images/placeholders/agents/delete-option.png" alt="Delete button location" />
+    </Frame>
+  </Step>
+
+  <Step title="Confirm deletion">
+    You'll be asked to confirm. Review carefully before confirming.
+
+    <Frame caption="Delete confirmation">
+      <img src="/images/placeholders/agents/delete-confirm.png" alt="Deletion confirmation dialog" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Best Practices for Agent Maintenance
+
+<AccordionGroup>
+  <Accordion title="Regular review schedule">
+    Set a monthly reminder to review your agents:
+    - Are they being used?
+    - Are users satisfied with responses?
+    - Do system prompts need updates?
+    - Is the knowledge base current?
+  </Accordion>
+
+  <Accordion title="Gather user feedback">
+    Ask users about their experience:
+    - What questions does the agent answer well?
+    - Where does it struggle?
+    - What additional knowledge would be helpful?
+  </Accordion>
+
+  <Accordion title="Document changes">
+    Keep notes on what you change and why:
+    - What was the issue?
+    - What change did you make?
+    - Did it help?
+  </Accordion>
+
+  <Accordion title="Test before deploying">
+    After any significant change:
+    - Test with multiple question types
+    - Verify it still handles previous use cases
+    - Check that tone and accuracy are maintained
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting Edits
+
+<AccordionGroup>
+  <Accordion title="Changes not saving">
+    - Check your internet connection
+    - Look for validation errors (red text near fields)
+    - Try refreshing and re-entering changes
+  </Accordion>
+
+  <Accordion title="Agent behaves differently after edit">
+    - Review all changes you made
+    - Check if the model was accidentally changed
+    - Verify knowledge base connections are intact
+  </Accordion>
+
+  <Accordion title="Can't find edit option">
+    - You may not have admin permissions
+    - The agent may be owned by another admin
+    - Contact your IT administrator for access
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add Knowledge" icon="book" href="/knowledge-base/adding-documents">
+    Upload documents to enhance your agents.
+  </Card>
+  <Card title="Chat Features" icon="comments" href="/chat-features/channels">
+    Learn how to use agents in team channels.
+  </Card>
+</CardGroup>
+

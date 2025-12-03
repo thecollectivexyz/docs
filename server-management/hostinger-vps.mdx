@@ -1,0 +1,216 @@
+---
+title: "Accessing Hostinger VPS"
+description: "Learn how to access your NTS Vortex server hosted on Hostinger"
+---
+
+## Overview
+
+NTS Vortex runs on a Hostinger VPS (Virtual Private Server). As an administrator, you may need to access the server to perform maintenance tasks, update the system, or modify configuration settings.
+
+<Warning>
+Server access should only be used when necessary. Most day-to-day administration tasks can be done through the NTS Vortex web interface.
+</Warning>
+
+## What You'll Need
+
+Before accessing the server, make sure you have:
+
+- Your Hostinger account login credentials
+- Your VPS IP address
+- SSH access credentials (username and password or SSH key)
+
+<Info>
+If you don't have these credentials, contact your NTS IT administrator.
+</Info>
+
+## Method 1: Using Hostinger's Browser Terminal
+
+The easiest way to access your VPS is through Hostinger's built-in browser terminal.
+
+<Steps>
+  <Step title="Log in to Hostinger">
+    Go to [hpanel.hostinger.com](https://hpanel.hostinger.com) and log in with your Hostinger account credentials.
+
+    <Frame caption="Hostinger login page">
+      <img src="/images/placeholders/server-management/hostinger-login.png" alt="Hostinger login page" />
+    </Frame>
+  </Step>
+
+  <Step title="Navigate to VPS">
+    From the main dashboard, find and click on **VPS** in the left sidebar or main navigation.
+
+    <Frame caption="Hostinger dashboard with VPS option">
+      <img src="/images/placeholders/server-management/hostinger-dashboard.png" alt="Hostinger dashboard showing VPS option" />
+    </Frame>
+  </Step>
+
+  <Step title="Select your VPS">
+    Click on the VPS instance that hosts NTS Vortex.
+
+    <Frame caption="VPS list showing NTS Vortex server">
+      <img src="/images/placeholders/server-management/vps-list.png" alt="List of VPS instances" />
+    </Frame>
+  </Step>
+
+  <Step title="Open Browser Terminal">
+    Look for the **Browser Terminal** or **Terminal** button and click it to open a command-line interface directly in your browser.
+
+    <Frame caption="Browser Terminal button location">
+      <img src="/images/placeholders/server-management/browser-terminal-button.png" alt="Browser Terminal button on VPS management page" />
+    </Frame>
+  </Step>
+
+  <Step title="Log in to the terminal">
+    The browser terminal will open. You may need to enter your VPS username (usually `root`) and password.
+
+    <Frame caption="Browser terminal logged in">
+      <img src="/images/placeholders/server-management/browser-terminal-active.png" alt="Active browser terminal session" />
+    </Frame>
+  </Step>
+</Steps>
+
+<Check>
+You are now connected to your VPS and can run commands.
+</Check>
+
+## Method 2: Using an SSH Client
+
+For more advanced users, you can connect using an SSH client like PuTTY (Windows) or the built-in Terminal (Mac/Linux).
+
+### On Mac or Linux
+
+<Steps>
+  <Step title="Open Terminal">
+    Open the Terminal application on your computer.
+  </Step>
+
+  <Step title="Connect via SSH">
+    Type the following command, replacing the placeholders with your actual information:
+
+    ```bash
+    ssh username@your-vps-ip-address
+    ```
+
+    For example:
+    ```bash
+    ssh root@123.456.789.10
+    ```
+  </Step>
+
+  <Step title="Enter your password">
+    When prompted, enter your VPS password. Note that the password won't be visible as you type.
+  </Step>
+
+  <Step title="You're connected">
+    Once authenticated, you'll see a command prompt indicating you're connected to the server.
+
+    <Frame caption="SSH connection on Mac Terminal">
+      <img src="/images/placeholders/server-management/mac-ssh-connected.png" alt="Mac Terminal showing successful SSH connection" />
+    </Frame>
+  </Step>
+</Steps>
+
+### On Windows (Using PuTTY)
+
+<Steps>
+  <Step title="Download PuTTY">
+    If you don't have PuTTY installed, download it from [putty.org](https://www.putty.org).
+  </Step>
+
+  <Step title="Open PuTTY">
+    Launch the PuTTY application.
+
+    <Frame caption="PuTTY application window">
+      <img src="/images/placeholders/server-management/putty-main.png" alt="PuTTY main configuration window" />
+    </Frame>
+  </Step>
+
+  <Step title="Enter server details">
+    - In the **Host Name** field, enter your VPS IP address
+    - Make sure **Port** is set to `22`
+    - Ensure **Connection type** is set to `SSH`
+
+    <Frame caption="PuTTY configuration filled in">
+      <img src="/images/placeholders/server-management/putty-configured.png" alt="PuTTY with server details entered" />
+    </Frame>
+  </Step>
+
+  <Step title="Connect">
+    Click **Open** to start the connection. If prompted about a security alert for the first connection, click **Accept**.
+  </Step>
+
+  <Step title="Log in">
+    Enter your username (usually `root`) and password when prompted.
+
+    <Frame caption="PuTTY terminal connected">
+      <img src="/images/placeholders/server-management/putty-connected.png" alt="PuTTY showing successful connection" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Finding Your VPS Information
+
+If you need to find your VPS IP address or reset your password:
+
+<Steps>
+  <Step title="Go to VPS Overview">
+    In the Hostinger panel, navigate to your VPS and look at the **Overview** or **Details** section.
+
+    <Frame caption="VPS overview showing IP and details">
+      <img src="/images/placeholders/server-management/vps-overview.png" alt="VPS overview page with IP address visible" />
+    </Frame>
+  </Step>
+
+  <Step title="Find the IP address">
+    Your VPS IP address is displayed on the overview page, usually labeled as **IP Address** or **Server IP**.
+  </Step>
+
+  <Step title="Reset password if needed">
+    If you've forgotten your VPS password, look for a **Reset Password** or **Change Root Password** option in the VPS management panel.
+
+    <Frame caption="Password reset option">
+      <img src="/images/placeholders/server-management/reset-password.png" alt="VPS password reset option" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Security Best Practices
+
+<Warning>
+Your VPS has direct access to NTS Vortex. Keep your credentials secure:
+
+- Never share your VPS password via email or chat
+- Use strong, unique passwords
+- Log out when you're done working
+- Only access the server when necessary
+</Warning>
+
+## Common Issues
+
+<AccordionGroup>
+  <Accordion title="I can't connect to the server">
+    - Verify you're using the correct IP address
+    - Check that your internet connection is working
+    - Ensure the VPS is running (check Hostinger dashboard)
+    - Try the browser terminal method first
+  </Accordion>
+
+  <Accordion title="My password isn't working">
+    - Make sure Caps Lock is off
+    - Remember that passwords are case-sensitive
+    - Try resetting your password through the Hostinger panel
+  </Accordion>
+
+  <Accordion title="Connection times out">
+    - Check if the VPS is powered on in Hostinger
+    - Try again after a few minutes
+    - Contact your IT administrator if the issue persists
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<Card title="Update NTS Vortex" icon="arrow-right" href="/server-management/updating-docker">
+  Learn how to update NTS Vortex to the latest version.
+</Card>
+

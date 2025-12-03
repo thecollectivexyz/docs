@@ -1,0 +1,271 @@
+---
+title: "Tagging AI Models"
+description: "Learn how to use @ mentions to interact with specific AI models and agents in NTS Vortex"
+---
+
+## Overview
+
+In NTS Vortex, you can tag specific AI models or agents using the **@** symbol. This is similar to tagging people in messaging apps, but you're tagging AI assistants instead.
+
+<Frame caption="Tagging an AI model">
+  <img src="/images/placeholders/chat-features/tagging-example.png" alt="Example of tagging an AI model in chat" />
+</Frame>
+
+## Why Tag AI Models?
+
+<CardGroup cols={2}>
+  <Card title="Choose Your AI" icon="hand-pointer">
+    Select exactly which AI model answers your question.
+  </Card>
+  <Card title="Use Specialized Agents" icon="robot">
+    Tag custom agents with specific knowledge and skills.
+  </Card>
+  <Card title="In Channels" icon="users">
+    Get AI assistance in team conversations.
+  </Card>
+  <Card title="Compare Responses" icon="code-compare">
+    Ask the same question to different models.
+  </Card>
+</CardGroup>
+
+## How to Tag AI Models
+
+<Steps>
+  <Step title="Type the @ symbol">
+    In the chat input, type **@** to see available models and agents.
+
+    <Frame caption="Typing @ symbol">
+      <img src="/images/placeholders/chat-features/type-at-symbol.png" alt="Chat input with @ symbol typed" />
+    </Frame>
+  </Step>
+
+  <Step title="See the suggestions">
+    A dropdown appears showing available options:
+    - AI models (GPT-4, Claude, etc.)
+    - Custom agents you've created
+    - Any other available assistants
+
+    <Frame caption="AI suggestions dropdown">
+      <img src="/images/placeholders/chat-features/ai-dropdown.png" alt="Dropdown showing available AI models and agents" />
+    </Frame>
+  </Step>
+
+  <Step title="Select or type the name">
+    Either:
+    - Click on a suggestion to select it
+    - Continue typing to filter the list
+
+    <Frame caption="Filtering suggestions">
+      <img src="/images/placeholders/chat-features/filter-ai.png" alt="Typing to filter AI suggestions" />
+    </Frame>
+  </Step>
+
+  <Step title="Write your message">
+    After the tag, write your question or request.
+
+    <Frame caption="Complete message with tag">
+      <img src="/images/placeholders/chat-features/complete-tagged-message.png" alt="Message with AI tag and question" />
+    </Frame>
+
+    Example: `@Claude Can you help me summarize this shipping policy?`
+  </Step>
+
+  <Step title="Send your message">
+    Press **Enter** or click send. The tagged AI will respond.
+
+    <Frame caption="AI response">
+      <img src="/images/placeholders/chat-features/tagged-response.png" alt="Response from the tagged AI model" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Tagging in Different Contexts
+
+### In Private Chats
+
+In your personal conversations, tagging lets you switch between AI models easily:
+
+<Frame caption="Tagging in private chat">
+  <img src="/images/placeholders/chat-features/private-tagging.png" alt="Tagging AI in a private conversation" />
+</Frame>
+
+You might:
+- Ask GPT-4 for creative writing
+- Switch to Claude for document analysis
+- Use a specialized agent for NTS-specific questions
+
+### In Channels
+
+In team channels, tagging is how you bring AI into the conversation:
+
+<Frame caption="Tagging in channel">
+  <img src="/images/placeholders/chat-features/channel-tagging.png" alt="Tagging AI in a team channel" />
+</Frame>
+
+Example conversation:
+> **You:** @GPT-4 Can you help us draft a response to this customer complaint about delayed shipping?
+>
+> **GPT-4:** [AI responds with draft]
+>
+> **Colleague:** @GPT-4 Can you make it more apologetic?
+>
+> **GPT-4:** [AI provides revised version]
+
+### Multiple Tags
+
+You can tag multiple AIs in one message to compare responses:
+
+<Frame caption="Multiple tags">
+  <img src="/images/placeholders/chat-features/multiple-tags.png" alt="Message with multiple AI tags" />
+</Frame>
+
+Example: `@GPT-4 @Claude How would you approach scheduling this shipment?`
+
+Both models will respond, and you can compare their suggestions.
+
+## Tagging Custom Agents
+
+If you have custom agents set up, you can tag them the same way:
+
+<Frame caption="Tagging custom agent">
+  <img src="/images/placeholders/chat-features/tag-custom-agent.png" alt="Tagging a custom NTS agent" />
+</Frame>
+
+Examples:
+- `@NTS-Policy-Expert What's our policy on hazmat shipments?`
+- `@Dispatch-Helper How should we route this heavy haul?`
+- `@HR-Assistant What are the vacation request procedures?`
+
+<Tip>
+Custom agents are great for questions about specific NTS topics since they have specialized knowledge and instructions.
+</Tip>
+
+## Common Tagging Patterns
+
+<AccordionGroup>
+  <Accordion title="Getting help with a task">
+    ```
+    @GPT-4 I need to write an email to a customer about a delayed shipment. 
+    The shipment number is 12345 and it's 2 days late due to weather.
+    ```
+  </Accordion>
+
+  <Accordion title="Analyzing information">
+    ```
+    @Claude Here's the route data for this week. Can you identify any 
+    patterns or areas for improvement?
+    [paste data]
+    ```
+  </Accordion>
+
+  <Accordion title="Answering policy questions">
+    ```
+    @NTS-Policy-Expert What's the maximum weight limit for flatbed shipments 
+    going through California?
+    ```
+  </Accordion>
+
+  <Accordion title="Drafting communications">
+    ```
+    @GPT-4 Draft a professional response to this carrier inquiry about 
+    our freight rates.
+    ```
+  </Accordion>
+
+  <Accordion title="Getting quick calculations">
+    ```
+    @GPT-4 If a truck averages 55 mph and needs to travel 780 miles, 
+    how long will the journey take including a 30-minute rest stop?
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+### Choosing the Right AI
+
+| Situation | Recommended |
+|-----------|-------------|
+| Complex analysis | GPT-4 or Claude |
+| Quick questions | GPT-4-mini or Claude Haiku |
+| NTS-specific questions | Custom NTS agents |
+| Creative writing | GPT-4 |
+| Document summaries | Claude |
+
+### Writing Good Prompts
+
+When tagging AI, be specific:
+
+**Less effective:**
+> @GPT-4 Help with shipping
+
+**More effective:**
+> @GPT-4 I need to calculate the shipping cost for a 2,500 lb load from Miami to Seattle. What information do you need to provide an estimate?
+
+### Context in Channels
+
+In channels, provide enough context since others are watching:
+
+**Good:**
+> @Claude We're discussing the Smith account shipment. Can you suggest three ways to optimize the routing from Dallas to Chicago?
+
+This helps:
+- The AI understand the context
+- Other team members follow the conversation
+- Future reference when reviewing history
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="AI not responding to tag">
+    - Make sure the @ is immediately before the model name
+    - Verify the model/agent is available
+    - Check for typos in the name
+    - Try refreshing the page
+  </Accordion>
+
+  <Accordion title="Model not appearing in suggestions">
+    - The model may not be enabled for your account
+    - Check with your administrator
+    - Try typing the full name manually
+  </Accordion>
+
+  <Accordion title="Wrong AI responding">
+    - Be more specific with your tag
+    - Make sure you selected the correct suggestion
+    - Use the full model name if shortened versions are ambiguous
+  </Accordion>
+
+  <Accordion title="Suggestions not showing">
+    - Make sure @ is the first character or has a space before it
+    - Wait a moment for the dropdown to load
+    - Check your internet connection
+  </Accordion>
+</AccordionGroup>
+
+## Keyboard Shortcuts
+
+Make tagging faster with these tips:
+
+| Action | Method |
+|--------|--------|
+| Open suggestions | Type `@` |
+| Navigate suggestions | Arrow keys (↑↓) |
+| Select suggestion | Enter or Tab |
+| Cancel | Escape |
+
+<Frame caption="Keyboard navigation">
+  <img src="/images/placeholders/chat-features/keyboard-nav.png" alt="Using keyboard to navigate AI suggestions" />
+</Frame>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="View Chat History" icon="clock-rotate-left" href="/chat-features/chat-history">
+    Review past conversations and AI interactions.
+  </Card>
+  <Card title="Create Agents" icon="robot" href="/agents/creating-agents">
+    Build custom agents to tag in conversations.
+  </Card>
+</CardGroup>
+
