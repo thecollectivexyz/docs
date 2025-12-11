@@ -68,12 +68,12 @@
       "anchors": [
         {
           "anchor": "NTS Logistics",
-          "href": "https://ntslogistics.com",
+          "href": "https://nts.spidev.ai",
           "icon": "truck"
         },
         {
           "anchor": "Support",
-          "href": "mailto:info@ntslogistics.com",
+          "href": "mailto:shadow@spidev.ai",
           "icon": "envelope"
         }
       ]
@@ -87,20 +87,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:info@ntslogistics.com"
+        "href": "mailto:shadow@spidev.ai"
       }
     ],
     "primary": {
       "type": "button",
       "label": "NTS Vortex",
-      "href": "https://ntslogistics.com"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/ntslogistics",
-      "linkedin": "https://linkedin.com/company/nationwide-transport-services",
-      "facebook": "https://facebook.com/ntslogistics"
+      "href": "https://nts.spidev.ai"
     }
   }
 }

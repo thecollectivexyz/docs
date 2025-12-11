@@ -15,7 +15,7 @@ OpenRouter is a service that gives you access to many different AI models throug
 
 <CardGroup cols={2}>
   <Card title="Many Models" icon="layer-group">
-    Access GPT-4, Claude, Gemini, Mistral, Llama, and many more models.
+    Access GPT-5.1, Claude, Gemini, Grok, Llama, and many more models.
   </Card>
   <Card title="One API Key" icon="key">
     Manage all your AI access through a single account and API key.
@@ -138,43 +138,6 @@ You now have an OpenRouter API key! Next, you'll add it to NTS Vortex.
     <Frame caption="Save button">
       <img src="/images/placeholders/models/save-openrouter.png" alt="Save button after configuration" />
     </Frame>
-  </Step>
-</Steps>
-
-### Method 2: Through Environment Variables
-
-If you prefer (or need) to configure via server settings:
-
-<Steps>
-  <Step title="Connect to your VPS">
-    Access your Hostinger VPS. See [Hostinger VPS Guide](/server-management/hostinger-vps) for instructions.
-  </Step>
-
-  <Step title="Edit the environment file">
-    ```bash
-    cd /opt/open-webui
-    nano .env
-    ```
-  </Step>
-
-  <Step title="Add the OpenRouter API key">
-    Add or update these lines:
-    
-    ```
-    OPENROUTER_API_KEY=sk-or-v1-your-api-key-here
-    OPENROUTER_API_BASE_URL=https://openrouter.ai/api/v1
-    ```
-
-    Replace `sk-or-v1-your-api-key-here` with your actual API key.
-  </Step>
-
-  <Step title="Save and restart">
-    Save the file (Ctrl+X, then Y, then Enter) and restart:
-    
-    ```bash
-    docker compose down
-    docker compose up -d
-    ```
   </Step>
 </Steps>
 

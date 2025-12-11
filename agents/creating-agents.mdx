@@ -32,11 +32,8 @@ Before creating an agent, plan out:
   </Step>
 
   <Step title="Click Create New Agent">
-    Click the **+ Create** button or **New Agent** button to start creating a new agent.
+    Click the **+ Create** button or **New Agent** button on the top right to start creating a new agent.
 
-    <Frame caption="Create new agent button">
-      <img src="/images/placeholders/agents/create-button.png" alt="Create new agent button location" />
-    </Frame>
   </Step>
 
   <Step title="Enter basic information">
@@ -123,29 +120,48 @@ Before creating an agent, plan out:
     </Frame>
   </Step>
 
-  <Step title="Configure additional settings">
-    Expand the **Advanced Settings** or **Additional Options** section to configure:
+  <Step title="Select capabilities">
+    Choose which capabilities your agent should have access to:
 
-    <Frame caption="Advanced settings panel">
-      <img src="/images/placeholders/agents/advanced-settings.png" alt="Advanced settings panel with various options" />
+    <Frame caption="Capabilities selection panel">
+      <img src="/images/placeholders/agents/capabilities-panel.png" alt="Capabilities panel with various toggles" />
     </Frame>
 
-    **Temperature**: Controls creativity (0 = focused, 1 = creative)
-    - Use lower values (0.1-0.3) for factual responses
-    - Use higher values (0.7-0.9) for creative content
+    **Vision**: Allow the agent to analyze and understand images
+    - Enable for agents that need to process visual content
+    - Useful for document analysis or image descriptions
 
-    **Max Tokens**: Maximum length of responses
-    - Higher values allow longer responses
-    - Consider your users' needs when setting this
+    **File Upload**: Let users upload files to the agent
+    - Enable for agents that work with documents
+    - Allows processing of PDFs, text files, and other formats
 
-    **Capabilities**: Enable or disable specific features
-    - Web search (if available)
-    - Code execution (if available)
-    - Image generation (if available)
+    **Web Search**: Give the agent access to current web information
+    - Enable for agents that need up-to-date information
+    - Useful for research and current events
+
+    **Image Generation**: Allow the agent to create images
+    - Enable for creative or visual design agents
+    - Useful for generating diagrams or illustrations
+
+    **Code Interpreter**: Enable code execution capabilities
+    - Allow the agent to run and test code
+    - Useful for programming assistance and data analysis
+
+    **Usage**: Track and display usage statistics
+    - Monitor how often the agent is used
+    - Helpful for optimization and resource planning
+
+    **Citations**: Show sources for information provided
+    - Enable to display references from knowledge base
+    - Improves transparency and trust
+
+    **Status Updates**: Provide real-time status information
+    - Show processing status during long operations
+    - Keeps users informed of agent activity
   </Step>
 
   <Step title="Set visibility">
-    Choose who can access this agent:
+    Click on access on the top right and choose who can access this agent:
 
     <Frame caption="Visibility settings">
       <img src="/images/placeholders/agents/visibility.png" alt="Visibility options showing private and public" />
@@ -157,10 +173,6 @@ Before creating an agent, plan out:
 
   <Step title="Save the agent">
     Click the **Save** or **Create** button to save your new agent.
-
-    <Frame caption="Save agent button">
-      <img src="/images/placeholders/agents/save-button.png" alt="Save button highlighted" />
-    </Frame>
   </Step>
 </Steps>
 
@@ -179,10 +191,6 @@ After creating an agent, test it thoroughly:
 
   <Step title="Select your agent">
     Click on the model selector and find your newly created agent.
-
-    <Frame caption="Selecting the new agent">
-      <img src="/images/placeholders/agents/select-agent-chat.png" alt="Model selector showing the new agent" />
-    </Frame>
   </Step>
 
   <Step title="Test various scenarios">
@@ -191,10 +199,6 @@ After creating an agent, test it thoroughly:
     - Questions it should answer well
     - Edge cases and tricky questions
     - Questions it should decline or redirect
-
-    <Frame caption="Testing the agent">
-      <img src="/images/placeholders/agents/test-conversation.png" alt="Chat conversation testing the agent" />
-    </Frame>
   </Step>
 
   <Step title="Refine as needed">
