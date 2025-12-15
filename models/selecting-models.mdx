@@ -13,17 +13,19 @@ NTS Vortex can connect to many AI models, but not all need to be available to ev
 
 ## Understanding Model Options
 
-Different AI models have different strengths:
+Different AI models have different strengths. Thanks to OpenRouter, you can offer the best models from every major provider:
 
 | Model Type | Strengths | Best For | Cost |
 |------------|-----------|----------|------|
-| **GPT-4o** | Reasoning, general knowledge | Complex questions, analysis | Higher |
-| **GPT-4o-mini** | Fast, capable | Most daily tasks | Lower |
-| **Claude 3.5 Sonnet** | Documents, nuance | Long documents, careful work | Medium |
-| **Claude 3 Haiku** | Very fast | Quick responses | Lowest |
-| **Gemini Pro** | Long context, multimodal | Large documents, images | Medium |
-| **Mistral** | Speed, efficiency | Quick tasks | Lower |
-| **Llama 3** | Open source, capable | General tasks | Medium |
+| **GPT-4o** | Versatile, reasoning | Daily tasks, complex queries | Medium |
+| **GPT-4o-mini** | Speed, efficiency | Simple tasks, quick answers | Low |
+| **o1-preview** | Advanced Reasoning | Math, Science, Hard Problems | High |
+| **Claude 3.5 Sonnet** | Coding, writing, nuance | Development, content creation | Medium |
+| **Claude 3 Haiku** | Fast, conversational | Quick summaries, chat | Low |
+| **Gemini 2.5 Pro** | Long context (2M tokens) | Analyzing large documents | Medium |
+| **Mistral Large 2** | Multilingual, reasoning | European languages, logic | Medium |
+| **Perplexity Sonar** | Real-time search | Fact-checking, current events | Low-Medium |
+| **DeepSeek V3** | Coding, general | Software development, math | Low |
 
 ## Viewing Available Models
 
@@ -37,7 +39,7 @@ Different AI models have different strengths:
   </Step>
 
   <Step title="Find Models section">
-    Look for **Models**, **Model Settings**, or **Connections** depending on your version.
+    Look for **Models**, **Model Settings**, or **Connections**.
 
     <Frame caption="Models settings section">
       <img src="/images/placeholders/models/models-settings-section.png" alt="Models configuration section" />
@@ -58,7 +60,11 @@ Different AI models have different strengths:
 Control which models users can see:
 
 <Steps>
-  <Step title="Find the model">
+  <Step title="Go to models list">
+    Clock models in the left sidebar inside the admin panel.
+  </Step>
+
+    <Step title="Find the model">
     Locate the model you want to enable or disable in the models list.
   </Step>
 
@@ -69,218 +75,55 @@ Control which models users can see:
       <img src="/images/placeholders/models/toggle-model.png" alt="Toggle switch for enabling/disabling a model" />
     </Frame>
   </Step>
-
-  <Step title="Save changes">
-    Click **Save** to apply your changes.
-  </Step>
 </Steps>
 
 <Tip>
-Don't overwhelm users with too many options. Enable 3-5 well-chosen models that cover different use cases.
+Don't overwhelm users with too many options. Enable 3-5 well-chosen models that cover different use cases (e.g., one fast model, one reasoning model, one coding model).
 </Tip>
-
-## Setting a Default Model
-
-The default model is what users see when they start a new chat:
-
-<Steps>
-  <Step title="Find default model settings">
-    Look for **Default Model** or **Default Settings** in the models configuration.
-
-    <Frame caption="Default model setting">
-      <img src="/images/placeholders/models/default-model-setting.png" alt="Default model configuration option" />
-    </Frame>
-  </Step>
-
-  <Step title="Select the default">
-    Choose which model should be the default. Consider:
-    - A good balance of capability and cost
-    - Appropriate for most common use cases
-    - Fast enough for a good user experience
-
-    <Frame caption="Selecting default model">
-      <img src="/images/placeholders/models/select-default.png" alt="Dropdown to select default model" />
-    </Frame>
-  </Step>
-
-  <Step title="Save">
-    Click **Save** to set the default.
-  </Step>
-</Steps>
-
-<Info>
-Users can still switch to other enabled models - the default just sets the starting point.
-</Info>
 
 ## Recommended Model Configurations
 
-### For General Business Use
+We recommend enabling a diverse set of models to give employees the best tool for every job.
 
-Enable these models for a good balance:
+### OpenAI Models (General Purpose & Reasoning)
+- **GPT-4o**: The current state-of-the-art flagship. Excellent at reasoning, following instructions, and general knowledge.
+- **GPT-4o-mini**: The best cost-to-performance ratio. Use this as your **default model** for everyday tasks.
+- **o1-mini / o1-preview**: Specialized "reasoning" models. Great for math, logic puzzles, and complex planning (slower, but deeper thinking).
 
-| Model | Purpose |
-|-------|---------|
-| GPT-4o-mini | Default - fast, capable, affordable |
-| GPT-4o | Complex tasks when needed |
-| Claude 3.5 Sonnet | Document-heavy work |
+### Anthropic Models (Coding & Writing)
+- **Claude 3.5 Sonnet**: widely considered the best for **coding** and **nuanced writing**. It feels very "human" and follows complex formatting instructions perfectly.
+- **Claude 3 Opus**: The previous flagship, still excellent for very long, complex creative writing tasks.
+- **Claude 3 Haiku**: extremely fast and cheap, great for simple summarization.
 
-### For Cost-Conscious Setup
+### Google Models (Long Context)
+- **Gemini 2.5 Pro**: Features a massive context window (up to 2M tokens). Perfect for analyzing entire books, large codebases, or long PDF reports.
+- **Gemini 2.5 Flash**: A faster, lighter version of Pro.
 
-Focus on economical models:
+### Meta & Open Source (Uncensored & Efficient)
+- **Llama 3.1 70B**: A very strong, efficient all-rounder.
 
-| Model | Purpose |
-|-------|---------|
-| GPT-4o-mini | Default - excellent price/performance |
-| Claude 3 Haiku | Ultra-fast, very affordable |
-| Mistral | Alternative for variety |
-
-### For Maximum Capability
-
-Enable top-tier models for demanding work:
-
-| Model | Purpose |
-|-------|---------|
-| GPT-4o | Default - best overall |
-| Claude 3 Opus | Complex reasoning |
-| Gemini Pro | Long documents |
+### Search & Special Purpose
+- **Perplexity Llama 3.1 Sonar (Online)**: Excellent for questions requiring **real-time internet access** and up-to-date citations.
 
 ## Organizing Models
 
-### Creating Model Groups (if supported)
-
-Some setups allow grouping models:
-
-<Frame caption="Model groups">
-  <img src="/images/placeholders/models/model-groups.png" alt="Models organized into groups" />
-</Frame>
-
-Example groups:
-- **Fast Models** - GPT-4o-mini, Claude Haiku
-- **Powerful Models** - GPT-4o, Claude Opus
-- **Specialized** - Coding models, image models
-
 ### Custom Display Names
 
-You can often customize how models appear to users:
+You can customize how models appear to users to make them easier to understand:
 
 <Steps>
   <Step title="Edit model settings">
     Click on a model to edit its settings.
-
-    <Frame caption="Edit model">
-      <img src="/images/placeholders/models/edit-model-name.png" alt="Editing model display name" />
-    </Frame>
   </Step>
 
   <Step title="Set display name">
     Change the display name to something user-friendly:
-    - "GPT-4o" → "Standard AI"
-    - "Claude 3.5 Sonnet" → "Document Expert"
-    
-    <Frame caption="Custom display name">
-      <img src="/images/placeholders/models/custom-name.png" alt="Setting a custom display name" />
-    </Frame>
+    - "gpt-4o" → "GPT-4o (Best Overall)"
+    - "claude-3-5-sonnet" → "Claude Sonnet (Coding Expert)"
+    - "llama-3.1-sonar-large-online" → "Web Search"
+  
   </Step>
 </Steps>
-
-## Model Parameters
-
-Adjust how models behave:
-
-<Frame caption="Model parameters">
-  <img src="/images/placeholders/models/model-parameters.png" alt="Model parameter settings" />
-</Frame>
-
-### Temperature
-
-Controls creativity vs. consistency:
-- **0.0 - 0.3**: Very consistent, factual
-- **0.4 - 0.6**: Balanced
-- **0.7 - 1.0**: More creative, varied
-
-### Max Tokens
-
-Maximum response length:
-- Lower values = shorter, faster responses
-- Higher values = longer, more detailed responses
-
-### Context Length
-
-How much conversation history the model remembers:
-- Important for long conversations
-- Higher values use more resources
-
-## Testing Models
-
-Before enabling models for all users, test them:
-
-<Steps>
-  <Step title="Enable the model for yourself">
-    Make sure you can access the model.
-  </Step>
-
-  <Step title="Test various scenarios">
-    Try:
-    - Simple questions
-    - Complex requests
-    - NTS-specific questions
-    - Tasks with knowledge base
-  </Step>
-
-  <Step title="Evaluate">
-    Consider:
-    - Response quality
-    - Speed
-    - Appropriateness for your users
-  </Step>
-
-  <Step title="Enable for others">
-    Once satisfied, enable for all users.
-  </Step>
-</Steps>
-
-## User Permissions (if available)
-
-Some setups allow different models for different users:
-
-<Frame caption="Model permissions by user group">
-  <img src="/images/placeholders/models/model-permissions.png" alt="Settings for model permissions per user group" />
-</Frame>
-
-For example:
-- Regular users: GPT-4o-mini only
-- Power users: GPT-4o-mini, GPT-4o
-- Admins: All models
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Model doesn't appear in dropdown">
-    - Verify the model is enabled in admin settings
-    - Check that the API connection is working
-    - Refresh the page
-    - Log out and back in
-  </Accordion>
-
-  <Accordion title="Model errors or won't respond">
-    - Check API key validity
-    - Verify you have credits/quota
-    - Try a different model
-    - Check provider status pages
-  </Accordion>
-
-  <Accordion title="Model is slow">
-    - Some models are inherently slower
-    - Check your internet connection
-    - Consider using a faster model for time-sensitive tasks
-  </Accordion>
-
-  <Accordion title="Responses are cut off">
-    - Increase max tokens setting
-    - The model may have hit its context limit
-    - Start a new chat to clear context
-  </Accordion>
-</AccordionGroup>
 
 ## Next Steps
 
@@ -292,4 +135,3 @@ For example:
     Use specific models with custom agents.
   </Card>
 </CardGroup>
-

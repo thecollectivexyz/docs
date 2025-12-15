@@ -57,7 +57,6 @@
             "group": "Chat Features",
             "pages": [
               "chat-features/channels",
-              "chat-features/tagging-models",
               "chat-features/chat-history"
             ]
           }

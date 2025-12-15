@@ -1,217 +1,74 @@
 ---
 title: "Updating NTS Vortex"
-description: "Keep NTS Vortex up to date by updating the Docker container to the latest version"
+description: "Keep NTS Vortex up to date using the Coolify dashboard"
 ---
 
-## Why Update?
+## Overview
 
-Regular updates ensure you have:
-
-- The latest features and improvements
-- Security patches and bug fixes
-- Better performance and stability
-- Access to new AI capabilities
-
-<Tip>
-We recommend checking for updates at least once a month or whenever new features are announced.
-</Tip>
-
-## Before You Begin
-
-<Warning>
-Updating NTS Vortex will briefly make the system unavailable (usually less than 5 minutes). Plan updates during low-usage periods when possible.
-</Warning>
-
-Make sure you have:
-
-- Access to your Hostinger VPS ([see VPS access guide](/server-management/hostinger-vps))
-- About 10-15 minutes of time
-- Notified your team about the brief downtime (optional but recommended)
+Updating NTS Vortex ensures you have the latest features, security patches, and performance improvements. Since your instance is managed via Coolify, the update process is simple and performed entirely in your browser.
 
 ## Update Process
 
 <Steps>
-  <Step title="Connect to your VPS">
-    Access your VPS using the browser terminal or SSH. See the [Hostinger VPS guide](/server-management/hostinger-vps) if you need help connecting.
+  <Step title="Access Coolify">
+    Log in to your Coolify dashboard (see [Accessing Hostinger VPS](/server-management/hostinger-vps) for details).
+  </Step>
 
-    <Frame caption="Connected to VPS terminal">
-      <img src="/images/placeholders/server-management/terminal-connected.png" alt="Terminal showing successful connection to VPS" />
+  <Step title="Select the Project">
+    Click on the project that contains your NTS Vortex installation.
+
+    <Frame caption="Select Project">
+      <img src="/images/placeholders/server-management/coolify-select-project.png" alt="Select project in Coolify" />
+    </Frame>
+  </Step> 
+
+  <Step title="Select the Resource">
+    Locate and click on the **NTS Vortex** (or Open WebUI) resource within your project environment.
+
+    <Frame caption="Select Resource">
+      <img src="/images/placeholders/server-management/coolify-select-resource.png" alt="Select resource in Coolify" />
     </Frame>
   </Step>
 
-  <Step title="Navigate to the NTS Vortex directory">
-    Change to the directory where NTS Vortex is installed. This is typically:
-
-    ```bash
-    cd /opt/open-webui
-    ```
-
-    Or it might be in your home directory:
-
-    ```bash
-    cd ~/open-webui
-    ```
-
-    <Info>
-    If you're unsure of the location, contact your IT administrator for the correct path.
-    </Info>
-
-    <Frame caption="Changed to NTS Vortex directory">
-      <img src="/images/placeholders/server-management/cd-directory.png" alt="Terminal after changing to the correct directory" />
+  <Step title="Redeploy with Latest Changes">
+    To update to the latest version:
+    1. Click the **Advanced** button in the top right corner.
+    2. Select **Force Redeploy** (or **Pull latest images & restart**).
+    
+    This ensures that Coolify pulls the absolute latest version of the application image before restarting.
+    
+    <Frame caption="Advanced Redeploy Options">
+      <img src="/images/placeholders/server-management/coolify-advanced-redeploy.png" alt="Advanced redeploy options in Coolify" />
     </Frame>
   </Step>
 
-  <Step title="Pull the latest Docker image">
-    Download the newest version of NTS Vortex by running:
+  <Step title="Wait for Deployment">
+    You can watch the deployment logs in real-time as the new version is downloaded and started. The process usually takes a few minutes.
+    
+    Once the status shows **Running** (usually a green indicator), the update is complete.
 
-    ```bash
-    docker pull ghcr.io/open-webui/open-webui:main
-    ```
-
-    This command downloads the latest version. You'll see progress as files are downloaded.
-
-    <Frame caption="Docker pulling the latest image">
-      <img src="/images/placeholders/server-management/docker-pull.png" alt="Terminal showing Docker pull progress" />
-    </Frame>
-
-    Wait for the process to complete. You'll see "Status: Downloaded newer image" or "Status: Image is up to date" when finished.
-  </Step>
-
-  <Step title="Stop the current container">
-    Stop the running NTS Vortex container:
-
-    ```bash
-    docker compose down
-    ```
-
-    Or if you're using the older docker-compose command:
-
-    ```bash
-    docker-compose down
-    ```
-
-    <Frame caption="Docker container stopped">
-      <img src="/images/placeholders/server-management/docker-down.png" alt="Terminal showing container stopped" />
-    </Frame>
-
-    <Warning>
-    NTS Vortex is now offline. Complete the remaining steps promptly to minimize downtime.
-    </Warning>
-  </Step>
-
-  <Step title="Start the updated container">
-    Start NTS Vortex with the new version:
-
-    ```bash
-    docker compose up -d
-    ```
-
-    Or with the older command:
-
-    ```bash
-    docker-compose up -d
-    ```
-
-    The `-d` flag runs the container in the background.
-
-    <Frame caption="Docker container started with new version">
-      <img src="/images/placeholders/server-management/docker-up.png" alt="Terminal showing container started" />
+    <Frame caption="Deployment in Progress">
+      <img src="/images/placeholders/server-management/coolify-deployment-logs.png" alt="Deployment logs in Coolify" />
     </Frame>
   </Step>
 
-  <Step title="Verify the update">
-    Check that NTS Vortex is running:
-
-    ```bash
-    docker ps
-    ```
-
-    You should see the open-webui container listed with a status of "Up".
-
-    <Frame caption="Docker showing running container">
-      <img src="/images/placeholders/server-management/docker-ps.png" alt="Terminal showing running Docker containers" />
-    </Frame>
-  </Step>
-
-  <Step title="Test in your browser">
-    Open NTS Vortex in your web browser and verify everything is working correctly.
-
-    <Frame caption="NTS Vortex running after update">
-      <img src="/images/placeholders/server-management/vortex-updated.png" alt="NTS Vortex dashboard showing successful update" />
-    </Frame>
+  <Step title="Verify Update">
+    Go to your NTS Vortex URL in a new tab and check that the application loads correctly.
   </Step>
 </Steps>
 
-<Check>
-NTS Vortex has been successfully updated to the latest version!
-</Check>
-
-## Quick Reference Commands
-
-For easy reference, here are all the commands in one place:
-
-```bash
-# Navigate to NTS Vortex directory
-cd /opt/open-webui
-
-# Pull latest version
-docker pull ghcr.io/open-webui/open-webui:main
-
-# Stop current version
-docker compose down
-
-# Start new version
-docker compose up -d
-
-# Verify it's running
-docker ps
-```
+<Note>
+If you need to update to a specific version instead of the latest, you can modify the **Image Tag** in the Configuration tab before redeploying.
+</Note>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Docker command not found">
-    If you see "command not found" for Docker, it may need to be installed or the path may be different. Contact your IT administrator.
+  <Accordion title="Deployment Failed">
+    If the deployment fails, check the **Build Logs** tab in Coolify to see the error message. Common issues include temporary network glitches or configuration errors. Try redeploying again.
   </Accordion>
-
-  <Accordion title="Permission denied errors">
-    Try adding `sudo` before your commands:
-    
-    ```bash
-    sudo docker compose down
-    sudo docker compose up -d
-    ```
-  </Accordion>
-
-  <Accordion title="Container won't start">
-    Check the logs for errors:
-    
-    ```bash
-    docker logs open-webui
-    ```
-    
-    If you see errors, note them down and contact your IT administrator.
-  </Accordion>
-
-  <Accordion title="Website not loading after update">
-    - Wait 1-2 minutes for the container to fully start
-    - Try clearing your browser cache
-    - Check if the container is running with `docker ps`
-    - Review logs with `docker logs open-webui`
-  </Accordion>
-
-  <Accordion title="Rolling back to previous version">
-    If something goes wrong and you need to rollback, contact your IT administrator. They can restore from a previous version if needed.
+  
+  <Accordion title="Service Unreachable">
+    If the service doesn't come back up after deployment, ensure the health checks are passing in the Coolify dashboard. You may need to wait a minute or two for the application to fully start.
   </Accordion>
 </AccordionGroup>
-
-## Automatic Updates (Optional)
-
-For automatic updates, your IT team can set up Watchtower or a similar tool. This is an advanced configuration that should be handled by technical staff.
-
-## Next Steps
-
-<Card title="Configure Environment Variables" icon="arrow-right" href="/server-management/environment-variables">
-  Learn how to modify NTS Vortex settings through environment variables.
-</Card>
-
