@@ -5,45 +5,50 @@ description: "Choose and configure which AI models are available to users in NTS
 
 ## Overview
 
-NTS Vortex can connect to many AI models, but not all need to be available to every user. This guide explains how to manage which models are visible and set defaults.
+NTS Vortex can connect to many AI models, but not all need to be available to every user. This guide explains how to manage which models are visible and set availability.
 
 <Frame caption="Model management interface">
-  <img src="/images/placeholders/models/model-management.png" alt="Admin interface for managing models" />
+  <img
+    src="/images/placeholders/models/model-management.png"
+    alt="Admin interface for managing models"
+  />
 </Frame>
 
 ## Understanding Model Options
 
 Different AI models have different strengths. Thanks to OpenRouter, you can offer the best models from every major provider:
 
-| Model Type | Strengths | Best For | Cost |
-|------------|-----------|----------|------|
-| **GPT-4o** | Versatile, reasoning | Daily tasks, complex queries | Medium |
-| **GPT-4o-mini** | Speed, efficiency | Simple tasks, quick answers | Low |
-| **o1-preview** | Advanced Reasoning | Math, Science, Hard Problems | High |
-| **Claude 3.5 Sonnet** | Coding, writing, nuance | Development, content creation | Medium |
-| **Claude 3 Haiku** | Fast, conversational | Quick summaries, chat | Low |
-| **Gemini 2.5 Pro** | Long context (2M tokens) | Analyzing large documents | Medium |
-| **Mistral Large 2** | Multilingual, reasoning | European languages, logic | Medium |
-| **Perplexity Sonar** | Real-time search | Fact-checking, current events | Low-Medium |
-| **DeepSeek V3** | Coding, general | Software development, math | Low |
+| Model Type            | Strengths                | Best For                      | Cost       |
+| --------------------- | ------------------------ | ----------------------------- | ---------- |
+| **GPT-4o**            | Versatile, reasoning     | Daily tasks, complex queries  | Medium     |
+| **GPT-4o-mini**       | Speed, efficiency        | Simple tasks, quick answers   | Low        |
+| **o1-preview**        | Advanced Reasoning       | Math, Science, Hard Problems  | High       |
+| **Claude 3.5 Sonnet** | Coding, writing, nuance  | Development, content creation | Medium     |
+| **Claude 3 Haiku**    | Fast, conversational     | Quick summaries, chat         | Low        |
+| **Gemini 2.5 Pro**    | Long context (2M tokens) | Analyzing large documents     | Medium     |
+| **Mistral Large 2**   | Multilingual, reasoning  | European languages, logic     | Medium     |
+| **Perplexity Sonar**  | Real-time search         | Fact-checking, current events | Low-Medium |
+| **DeepSeek V3**       | Coding, general          | Software development, math    | Low        |
 
-## Viewing Available Models
+## Adding Available Models
 
 <Steps>
   <Step title="Access Admin Settings">
-    Go to **Settings** → **Admin Panel** → **Settings**.
+    Go to **Settings** → **Admin Panel** → **Settings** → **Connections** .
 
     <Frame caption="Path to admin settings">
       <img src="/images/placeholders/models/admin-path.png" alt="Navigation path to admin settings" />
     </Frame>
+
   </Step>
 
-  <Step title="Find Models section">
-    Look for **Models**, **Model Settings**, or **Connections**.
+  <Step title="Find Openrouter section">
+    Look for **https://openrouter.ai/api/v1** and click the settings button.
 
     <Frame caption="Models settings section">
       <img src="/images/placeholders/models/models-settings-section.png" alt="Models configuration section" />
     </Frame>
+
   </Step>
 
   <Step title="View connected models">
@@ -52,6 +57,34 @@ Different AI models have different strengths. Thanks to OpenRouter, you can offe
     <Frame caption="List of available models">
       <img src="/images/placeholders/models/available-models-list.png" alt="List showing all available models" />
     </Frame>
+
+  </Step>
+
+    <Step title="Go to openrouter">
+    Go to https://openrouter.ai/models.
+
+    <Frame caption="List of available models">
+      <img src="/images/placeholders/models/available-models-openrouter.png" alt="List showing all available models" />
+    </Frame>
+
+  </Step>
+
+      <Step title="Search for the model you want">
+    Use the search bar to search for any model you want to add, then click the copy ID button
+
+    <Frame caption="List of available models">
+      <img src="/images/placeholders/models/openrouter-select-model.png" alt="List showing all available models" />
+    </Frame>
+
+  </Step>
+
+        <Step title="Paste it inside Vorted">
+    Paste the model ID you copied from OpenRouter into the model ID field and click the "+" button, then save.
+
+    <Frame caption="List of available models">
+      <img src="/images/placeholders/models/openrouter-save-model.png" alt="List showing all available models" />
+    </Frame>
+
   </Step>
 </Steps>
 
@@ -66,6 +99,7 @@ Control which models users can see:
 
     <Step title="Find the model">
     Locate the model you want to enable or disable in the models list.
+
   </Step>
 
   <Step title="Toggle visibility">
@@ -74,11 +108,14 @@ Control which models users can see:
     <Frame caption="Toggling model visibility">
       <img src="/images/placeholders/models/toggle-model.png" alt="Toggle switch for enabling/disabling a model" />
     </Frame>
+
   </Step>
 </Steps>
 
 <Tip>
-Don't overwhelm users with too many options. Enable 3-5 well-chosen models that cover different use cases (e.g., one fast model, one reasoning model, one coding model).
+  Don't overwhelm users with too many options. Enable 3-5 well-chosen models
+  that cover different use cases (e.g., one fast model, one reasoning model, one
+  coding model).
 </Tip>
 
 ## Recommended Model Configurations
@@ -86,23 +123,28 @@ Don't overwhelm users with too many options. Enable 3-5 well-chosen models that 
 We recommend enabling a diverse set of models to give employees the best tool for every job.
 
 ### OpenAI Models (General Purpose & Reasoning)
+
 - **GPT-4o**: The current state-of-the-art flagship. Excellent at reasoning, following instructions, and general knowledge.
 - **GPT-4o-mini**: The best cost-to-performance ratio. Use this as your **default model** for everyday tasks.
 - **o1-mini / o1-preview**: Specialized "reasoning" models. Great for math, logic puzzles, and complex planning (slower, but deeper thinking).
 
 ### Anthropic Models (Coding & Writing)
+
 - **Claude 3.5 Sonnet**: widely considered the best for **coding** and **nuanced writing**. It feels very "human" and follows complex formatting instructions perfectly.
 - **Claude 3 Opus**: The previous flagship, still excellent for very long, complex creative writing tasks.
 - **Claude 3 Haiku**: extremely fast and cheap, great for simple summarization.
 
 ### Google Models (Long Context)
+
 - **Gemini 2.5 Pro**: Features a massive context window (up to 2M tokens). Perfect for analyzing entire books, large codebases, or long PDF reports.
 - **Gemini 2.5 Flash**: A faster, lighter version of Pro.
 
 ### Meta & Open Source (Uncensored & Efficient)
+
 - **Llama 3.1 70B**: A very strong, efficient all-rounder.
 
 ### Search & Special Purpose
+
 - **Perplexity Llama 3.1 Sonar (Online)**: Excellent for questions requiring **real-time internet access** and up-to-date citations.
 
 ## Organizing Models

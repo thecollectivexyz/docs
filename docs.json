@@ -25,8 +25,7 @@
             "group": "Server Management",
             "pages": [
               "server-management/hostinger-vps",
-              "server-management/updating-docker",
-              "server-management/environment-variables"
+              "server-management/updating-docker"
             ]
           },
           {
@@ -74,6 +73,11 @@
           "anchor": "Support",
           "href": "mailto:shadow@spidev.ai",
           "icon": "envelope"
+        },
+        {
+          "anchor": "Changelog",
+          "href": "https://github.com/open-webui/open-webui/blob/main/CHANGELOG.md",
+          "icon": "file-text"
         }
       ]
     }
