@@ -55,6 +55,7 @@
           {
             "group": "Chat Features",
             "pages": [
+              "chat-features/exporting-answers",
               "chat-features/channels",
               "chat-features/chat-history"
             ]
